@@ -2,6 +2,11 @@
 
 # Project Rubedo — Ciência e Inovação
 
+<!-- kg-personal-portfolio-v1 -->
+
+**Idealizador / Creator:** [Kaio Gabriel da Silva — KG Professional Portfolio 1.0](https://kgasil.github.io/portfolio/) · [GitHub](https://github.com/Kgasil) · [LinkedIn](https://www.linkedin.com/in/kaio-gabriel-da-silva). Portfólio pessoal independente do projeto / Personal portfolio separate from this project.
+
+
 **Science & Innovation · Ciência e Inovação**  
 *Turning knowledge into discovery.*  
 *by K&G Vision*
