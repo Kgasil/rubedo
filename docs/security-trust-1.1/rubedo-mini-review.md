@@ -24,3 +24,6 @@ Ambos os blobs coincidem entre main e backup. Cada ZIP tem nove entradas únicas
 - Novo verificador tests/verify_mini_package.py: hash fixado de ambos os ZIPs, lista exata, CRC descompactado, manifesto, PNG e paridade da versão atual com a fonte. SHA-256 histórico fixado no teste, sem alterar SHA256SUMS.txt ou packager.
 - CI existente executa 30 casos Mini, testes de pesquisa, cenários e interface Chromium. Acrescentado o novo verificador à CI; resultados a confirmar.
 - Não houve análise por Defender ou instalação real de extensão no Chrome/Edge nesta etapa. Testes Chromium do popup isolado não comprovam aceitação de extensão instalada. Sem assinatura ou aprovação de distribuição. Nenhum custo assumido.
+
+## Confirmação CI na etapa 06
+[Execução 45878528621](https://github.com/Kgasil/rubedo/actions/runs/45878528621): concluída com sucesso. Ambos os jobs (rules-and-package e browser) aprovados, incluindo verificador dos ZIPs atuais e históricos, testes Node e interface Chromium. Não é scan Defender nem instalação nativa.
