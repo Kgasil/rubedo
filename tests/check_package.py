@@ -1,7 +1,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
-import json, zipfile, hashlib
+import json, zipfile, hashlib, re
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
     def __init__(self): super().__init__(); self.refs=[]; self.ids=set()
@@ -23,7 +23,9 @@ for p,h in htmls.items():
         target=(p.parent/unquote(u.path)).resolve() if u.path else p
         if target.is_dir(): target=target/'index.html'
         assert target.exists(),(p,link)
-        if u.fragment and target in htmls: assert u.fragment in htmls[target].ids,(p,link)
+        if u.fragment and target in htmls:
+            scenario = target == (ROOT/'mini/index.html').resolve() and re.fullmatch(r'mode=takt&cycle=[0-9]{2,3}&demand=[0-9]{3,4}&lang=(pt|en)', u.fragment)
+            assert scenario or u.fragment in htmls[target].ids,(p,link)
         count+=1
 manifest=json.loads((ROOT/'extension/manifest.json').read_text())
 assert manifest['manifest_version']==3 and manifest['version']=='0.3.0'
