@@ -27,3 +27,9 @@ Research Workspace com sensibilidade, M/M/1 analítica e exportação de protoco
 
 ## 0.1.0 — preparação
 Site, identidade, Mini Lab e extensão inicial, documentação e testes.
+
+
+## Desenvolvimento pós-marco 01 — R06–R09
+- Precisão de medição, Monte Carlo triangular, regressão linear e confiabilidade exponencial.
+- Exportação JSON em R08/R09 e testes de referência adicionados; execução atual pendente.
+- Public Lab 1.0 histórico e Mini 0.3.0 preservados.
