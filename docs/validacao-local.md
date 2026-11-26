@@ -11,3 +11,7 @@
 ## Marco 01 — 0.4.0
 
 73 testes de regras e 38 verificações de interface em Chromium carregado em memória aprovados. Instalação real da extensão e implantação HTTP ainda requerem verificação.
+
+## Revisão para a edição inicial 1.0
+
+A execução HTTP anterior do GitHub Actions foi aprovada em [45747921238](https://github.com/Kgasil/rubedo/actions/runs/45747921238). A revisão adiciona testes de transferência de cenário; consulte a execução da revisão atual. A instalação em Chrome/Edge permanece pendente. Nenhuma alegação de validação industrial.

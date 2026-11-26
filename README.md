@@ -16,6 +16,8 @@ Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação 
 
 ## Acesso rápido / Quick access
 
+O simulador da página inicial agora permite continuar o cenário de ciclo e demanda no Mini Lab por um link com valores fictícios no fragmento da URL, sem envio desses valores ao servidor. / The landing demo can transfer a synthetic cycle and demand scenario into the Mini Lab via a URL fragment, without sending the values to the server.
+
 [**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 0.3.0 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
 
 | Recurso / Resource | Descrição / Scope |
@@ -78,9 +80,15 @@ node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). Testes HTTP/deploy e instalação nativa ainda dependem da publicação e da aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). O CI HTTP do laboratório foi aprovado na versão anterior; confira a execução da revisão atual. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
+
+<p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
+
+O escudo institucional mantém as quatro cores laterais e o núcleo branco; Rubedo ocupa as pontas superior (laranja) e inferior (dourado). / The institutional shield preserves four side colors and its white core; Rubedo occupies the upper orange and lower gold tips.
+
+[Escudo / Shield](https://github.com/Kgasil/kgasil.github.io/blob/main/assets/kg-symbol.svg)
 
 | Projeto | Missão | Acesso |
 | --- | --- | --- |

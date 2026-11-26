@@ -1,3 +1,9 @@
+# Preparação para Public Lab 1.0 / Release preparation
+
+- Continue a synthetic landing-page scenario in Mini Lab using a validated URL fragment; PT/EN, no data transmission.
+- Updated GRAAL shield and institutional links; original component versions and prior milestones preserved.
+- Added scenario parsing and browser transfer tests. Manual Chrome/Edge installation remains pending.
+
 # 0.4.0 — Marco 01 / public experimental edition
 
 - Live demo on landing page; Mini 0.3.0 includes loss decomposition, demand coverage and bottlenecks in extension.

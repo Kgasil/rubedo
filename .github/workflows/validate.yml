@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: find assets extension research scripts tests -name '*.js' -print0 | xargs -0 -n1 node --check
-      - run: node tests/mini.test.js && node tests/research.test.js && node tests/advanced.test.js
+      - run: find assets extension mini research scripts tests -name '*.js' -print0 | xargs -0 -n1 node --check
+      - run: node tests/mini.test.js && node tests/research.test.js && node tests/advanced.test.js && node tests/scenario.test.js
       - run: node scripts/reference_results.js --check
       - run: python3 tests/check_package.py
   browser:
