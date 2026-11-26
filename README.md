@@ -6,7 +6,7 @@
 *Turning knowledge into discovery.*  
 *by K&G Vision*
 
-> **Marco 01 — Rubedo Public Lab 0.4.0 / edição pública experimental.** Integra o ecossistema GRAAL, preservando os marcos anteriores. Não é empresa constituída, laboratório certificado, serviço comercial ou solução industrial validada.
+> **Marco 01 — Rubedo Public Lab 1.0 / edição pública inicial experimental.** Integra o ecossistema GRAAL, preservando os marcos anteriores. Não é empresa constituída, laboratório certificado, serviço comercial ou solução industrial validada.
 
 [Site oficial](https://kgasil.github.io/rubedo/) · [Português](#português) · [English](#english) · [Modelos](docs/modelos.md) · [Planejamento](docs/planejamento.md) · [Publicação](docs/publicacao.md)
 
@@ -76,11 +76,12 @@ Rubedo is an applied research and computational engineering initiative within K&
 node tests/mini.test.js
 node tests/research.test.js
 node tests/advanced.test.js
+node tests/scenario.test.js
 node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). O CI HTTP do laboratório foi aprovado na versão anterior; confira a execução da revisão atual. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace, Mini Lab e Mini Extension permanecem em 0.3.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 

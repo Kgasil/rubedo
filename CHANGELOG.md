@@ -1,4 +1,7 @@
-# Preparação para Public Lab 1.0 / Release preparation
+# Public Lab 1.0 — edição pública inicial / initial public edition
+
+- Scope: public experimental lab, not an industrially validated product. Research Workspace, Mini Lab and Mini Extension remain at 0.3.0.
+- [Validated technical revision](https://github.com/Kgasil/rubedo/actions/runs/45749793253): 84 rule checks, 43 HTTP browser checks, five reference cases and package integrity.
 
 - Continue a synthetic landing-page scenario in Mini Lab using a validated URL fragment; PT/EN, no data transmission.
 - Updated GRAAL shield and institutional links; original component versions and prior milestones preserved.

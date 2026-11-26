@@ -1,4 +1,4 @@
-# Project Rubedo — checkpoint de preparação
+# Project Rubedo — planejamento após Public Lab 1.0
 
 ## Identidade e finalidade
 - Project Rubedo — Ciência e Inovação / Science & Innovation.
@@ -21,11 +21,11 @@ Site estático bilíngue (PT/EN), aplicação local, extensão Chromium Manifest
 5. Revisão de qualidade e futura integração ao ecossistema: ferramentas interoperáveis com exemplos autorizados, sem acoplar diretamente ou modificar os outros projetos.
 
 ## Automações
-Implementada no pacote: GitHub Actions para sintaxe, testes e integridade do ZIP/links a cada push/PR ou acionamento manual. Não executada no GitHub ainda.
-Preparados scripts de ZIP/SHA-256, registros de referência e CI de navegação headless; futuras propostas: auditoria periódica de links, revisão formal de acessibilidade, releases somente mediante aprovação e ampliação dos registros reproduzíveis. Não criar tarefa recorrente nem agendar publicação sem pedido explícito. Nenhuma automação roda enquanto o repositório não existir.
+Implementada no pacote: GitHub Actions para sintaxe, testes e integridade do ZIP/links a cada push/PR ou acionamento manual. Executada no GitHub: [revisão técnica aprovada](https://github.com/Kgasil/rubedo/actions/runs/45749793253).
+Preparados scripts de ZIP/SHA-256, registros de referência e CI de navegação headless; futuras propostas: auditoria periódica de links, revisão formal de acessibilidade, releases somente mediante aprovação e ampliação dos registros reproduzíveis. Não criar tarefa recorrente nem agendar publicação sem pedido explícito. O repositório já existe e executa as verificações por commit.
 
 ## Critérios de entrega
-Site PT/EN, navegação consistente, Mini Lab 4 ferramentas, extensão 3 ferramentas, Research Workspace 4 modelos e caderno, pacote instalável, tutoriais, testes de cálculo, integridade de artefatos, documentação das hipóteses, nenhuma alegação exagerada. Testes isolados de interface em Chromium passaram; navegação HTTP, validação manual Chrome/Edge e implantação pública permanecem pendentes.
+Site PT/EN, navegação consistente, Mini Lab 4 ferramentas, extensão 4 ferramentas, Research Workspace 4 modelos e caderno, pacote instalável, tutoriais, testes de cálculo, integridade de artefatos, documentação das hipóteses, nenhuma alegação exagerada. CI HTTP e implantação pública anterior confirmados; aceitação manual Chrome/Edge e validação industrial permanecem pendentes.
 
 ## Perspectiva organizacional
 A [arquitetura do ecossistema](ecossistema.md) define missões próprias, interfaces futuras e limites atuais. Cada projeto tem autonomia de função e cooperação planejada; hoje não há subsidiárias ou equipes constituídas.

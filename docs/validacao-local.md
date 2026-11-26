@@ -15,3 +15,7 @@
 ## Revisão para a edição inicial 1.0
 
 A execução HTTP anterior do GitHub Actions foi aprovada em [45747921238](https://github.com/Kgasil/rubedo/actions/runs/45747921238). A revisão adiciona testes de transferência de cenário; consulte a execução da revisão atual. A instalação em Chrome/Edge permanece pendente. Nenhuma alegação de validação industrial.
+
+## Public Lab 1.0 — revisão técnica de lançamento
+
+[CI aprovado](https://github.com/Kgasil/rubedo/actions/runs/45749793253), revisão `a2985b044fadad6dd52ff8039a945f2d4e7b838e`: 30 testes Mini + 21 de pesquisa + 22 avançados + 11 de transferência = 84. 43 verificações de interface Chromium HTTP sem erros de página, cinco casos reproduzidos e 65 referências locais em quatro HTMLs; pacote ZIP íntegro. A promoção 1.0 altera a documentação e o rótulo da edição pública, não os motores ou a extensão. A aceitação real da extensão em Chrome/Edge e a validação independente ainda estão pendentes.
