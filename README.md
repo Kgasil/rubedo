@@ -10,6 +10,12 @@
 
 [Site oficial](https://kgasil.github.io/rubedo/) · [Português](#português) · [English](#english) · [Modelos](docs/modelos.md) · [Planejamento](docs/planejamento.md) · [Publicação](docs/publicacao.md)
 
+## Research Workspace 1.0 — 26/11/2026
+
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension remain 0.3.0; manual installation only. Independent automated regression results for the latest revision are not confirmed. Not validated for industrial decisions or certified research.
+
+[Comunicado / Announcement](docs/research-workspace-v1.0.md)
+
 ## Português
 
 Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação computacional, pesquisa operacional e engenharia de produção. Sua missão é transformar perguntas em modelos, experimentos reproduzíveis e evidências com hipóteses e limitações explícitas. A iniciativa K&G Vision é individual hoje; no futuro, suas frentes poderão operar com autonomia e coordenação comum. Rubedo não substitui Genesis (estudo), Argus (engenharia e segurança de IA), Aeris (produtividade) ou Lilium (inteligência empresarial).
@@ -29,7 +35,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v0.3.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
 | [Resultados reproduzíveis / Reproducible results](examples/reference-results.json) | Cinco casos de referência sintéticos / Five synthetic reference cases |
 
-## Research Workspace — 0.3.0
+## Research Workspace — 1.0 (experimental)
 
 | ID | Modelo / Model | Entrega / Output |
 | --- | --- | --- |
@@ -97,7 +103,7 @@ node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace, Mini Lab e Mini Extension permanecem em 0.3.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension permanecem em 0.3.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 
