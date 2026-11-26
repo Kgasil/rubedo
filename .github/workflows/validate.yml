@@ -18,7 +18,7 @@ jobs:
       - run: node scripts/reference_results.js --check
       - run: python3 tests/check_package.py
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
