@@ -6,3 +6,6 @@
 .demo-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.demo-results>div{background:var(--bg);border:1px solid var(--line);padding:14px;border-radius:10px}.demo-results strong{display:block;color:var(--gold);font-size:26px;font-variant-numeric:tabular-nums}.demo-track{height:12px;background:var(--bg);border-radius:8px;overflow:hidden;margin-top:16px}.demo-track div{height:100%;background:linear-gradient(90deg,#b52f2b,#ee7441,#eac477)}input[type=range]{accent-color:var(--gold);padding:0}
 
 .eco a:has(img):before{display:none}.eco a:has(img){display:inline-flex;align-items:center;gap:4px}.eco a img{display:block;flex:none}
+
+/* Explicit high contrast brand on the dark header, including visited links. */
+.header{background:#21100D;color:#FFF5EB}.header .brand,.header .brand:visited{color:#FFF5EB}.header .brand strong{color:#FFF5EB;font-weight:800}.header .brand small{color:#F2B77D;font-weight:700}.header .brand small:last-child{color:#E8CDB7}
