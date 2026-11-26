@@ -23,7 +23,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | Recurso / Resource | Descrição / Scope |
 | --- | --- |
 | [Site institucional / Website](index.html) | Missão, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
-| [Research Workspace](research/index.html) | Quatro modelos de pesquisa e caderno científico / Four research models and notebook |
+| [Research Workspace](research/index.html) | Seis modelos de pesquisa e caderno científico / Six research models and notebook |
 | [Mini Lab 0.3.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
 | [Mini Extension 0.3.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
 | [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v0.3.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
@@ -38,6 +38,11 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | R03 | Simulação estocástica M/M/1 / Stochastic simulation | Sementes, aquecimento, repetições, médias, gráfico e JSON / Seeds, warmup, replications, means, chart and JSON |
 | R04 | Otimização contínua / Continuous optimization | Dois produtos, dois recursos, solução por vértices, folgas, região viável e JSON / Two products, two resources, vertex solution, slack, feasible region and JSON |
 | R05 | Caderno de pesquisa / Research notebook | Protocolo JSON, exportação e restauração explícita / Explicit protocol export and restore |
+
+| R06 | Precisão de medição / Measurement precision | Média, desvio amostral e erro padrão / Mean, sample deviation and standard error |
+| R07 | Monte Carlo triangular / Triangular Monte Carlo | Semente, percentis e frequência de meta / Seed, quantiles and target frequency |
+
+R06 e R07 são adições experimentais ao Workspace; testes adicionados, execução atual ainda não confirmada. / Experimental additions; new test execution not yet confirmed.
 
 ## Mini Edition — 0.3.0
 
@@ -77,6 +82,8 @@ node tests/mini.test.js
 node tests/research.test.js
 node tests/advanced.test.js
 node tests/scenario.test.js
+node tests/precision.test.js
+node tests/monte.test.js
 node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
@@ -87,7 +94,7 @@ Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão
 
 <p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg?v=20261126-2" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
 
-O escudo institucional mantém as quatro cores laterais e o núcleo branco; Rubedo ocupa as pontas superior (laranja) e inferior (dourado). / The institutional shield preserves four side colors and its white core; Rubedo occupies the upper orange and lower gold tips.
+O escudo institucional mantém o topo roxo e rosa, o núcleo branco e a ponta inferior laranja do Rubedo. / The institutional shield preserves the purple and pink top, white core and Rubedo’s orange lower tip.
 
 [Escudo / Shield](https://github.com/Kgasil/kgasil.github.io/blob/main/assets/kg-symbol.svg)
 
