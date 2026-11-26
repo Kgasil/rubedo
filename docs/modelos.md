@@ -30,3 +30,16 @@ Maximizar vA*x+vB*y sujeito a a1*x+b1*y≤L1, a2*x+b2*y≤L2, x,y≥0. Enumerar 
 Schema `rubedo.research.protocol.v1`: título, pergunta e método obrigatórios; hipótese, métrica, origem, resultado, limitações e próxima ação opcionais. Máximo de 3.000 caracteres por campo. Exportação JSON, importação explícita de arquivo local ≤128 KiB com esquema validado; importação inválida preserva os campos. Não avalia veracidade, não envia e não mantém histórico. Conservar parâmetros, versão e dados autorizados junto do protocolo.
 
 [Cinco casos de referência](../examples/reference-results.json) · [Protocolos](experimentos.md)
+
+
+## R06 — Precisão de medição
+Média, desvio amostral (n−1) e erro padrão s/√n de 2–500 medições. Não estima viés ou incerteza metrológica completa.
+
+## R07 — Monte Carlo triangular
+Amostragem com semente registrada e distribuição triangular definida pelo mínimo, moda e máximo. Percentis empíricos e frequência de atingir a meta; não é previsão calibrada.
+
+## R08 — Regressão linear
+Mínimos quadrados com intercepto, 3–500 pares finitos, X não constante. Correlação e R² indefinidos quando Y é constante. RMSE = √(SSE/n). Resíduos na ordem original. Não estabelece causalidade nem valida extrapolação.
+
+## R09 — Confiabilidade
+Componentes independentes não reparáveis, taxas constantes λ por hora. R série = exp(−tΣλ); R paralelo = 1−Π(1−exp(−λᵢt)); MTTF série = 1/Σλ quando positiva. Sem falhas comuns, manutenção ou certificação. Modelos experimentais; validação atual pendente.
