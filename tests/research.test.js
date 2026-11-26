@@ -1,0 +1,23 @@
+'use strict';const assert=require('node:assert/strict'),r=require('../research/core.js');let n=0;function t(name,f){f();n++;console.log('OK '+name)}
+t('baseline',()=>assert.equal(r.sensitivity(60,60,100,100,20)[1].good,60));
+t('shorter cycle',()=>assert.equal(r.sensitivity(60,60,100,100,20)[0].good,75));
+t('longer cycle',()=>assert.equal(r.sensitivity(60,60,100,100,20)[2].good,50));
+t('zero change',()=>assert.deepEqual(r.sensitivity(60,60,100,100,0).map(x=>x.good),[60,60,60]));
+t('invalid change',()=>assert.throws(()=>r.sensitivity(60,60,100,100,100)));
+t('invalid cycle',()=>assert.throws(()=>r.sensitivity(60,0,100,100,20)));
+t('queue stable',()=>assert.equal(r.queue(6,10).stable,true));
+t('queue formula',()=>{const q=r.queue(6,10);assert.equal(q.W,15);assert.equal(q.Wq,9);assert.ok(Math.abs(q.L-1.5)<1e-12);assert.ok(Math.abs(q.Lq-.9)<1e-12)});
+t('queue saturation',()=>assert.equal(r.queue(10,10).stable,false));
+t('queue overload',()=>assert.equal(r.queue(11,10).stable,false));
+t('queue zero arrivals',()=>assert.equal(r.queue(0,10).Wq,0));
+t('queue invalid service',()=>assert.throws(()=>r.queue(6,0)));
+t('protocol required',()=>assert.throws(()=>r.protocol({title:'T'})));
+t('protocol trims',()=>assert.equal(r.protocol({title:' T ',question:'Q',method:'M'}).title,'T'));
+t('protocol schema',()=>assert.equal(r.protocol({title:'T',question:'Q',method:'M',extra:'X'}).schema,'rubedo.research.protocol.v1'));
+t('protocol invalid value',()=>assert.throws(()=>r.protocol({title:1,question:'Q',method:'M'})));
+t('protocol length',()=>assert.throws(()=>r.protocol({title:'T',question:'Q',method:'M',result:'a'.repeat(3001)})));
+t('import roundtrip',()=>{const p=r.protocol({title:'T',question:'Q',method:'M'});assert.deepEqual(r.importProtocol(JSON.stringify(p)),p)});
+t('import bad schema',()=>assert.throws(()=>r.importProtocol(JSON.stringify({schema:'other',title:'T',question:'Q',method:'M'}))));
+t('import malformed',()=>assert.throws(()=>r.importProtocol('not json')));
+t('import oversized',()=>assert.throws(()=>r.importProtocol('x'.repeat(131073))));
+console.log(n+' research checks passed');

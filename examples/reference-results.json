@@ -1,0 +1,241 @@
+{
+  "schema": "rubedo.reference.results.v1",
+  "release": "0.4.0",
+  "data": "synthetic",
+  "cases": [
+    {
+      "id": "capacity",
+      "inputs": [
+        480,
+        45,
+        85,
+        97
+      ],
+      "result": {
+        "theoretical": 640,
+        "effective": 544,
+        "good": 527.68,
+        "availabilityLoss": 96,
+        "qualityLoss": 16.32000000000005,
+        "goodRatio": 82.44999999999999
+      },
+      "limitations": "Simplified continuous flow; no setups or material limits."
+    },
+    {
+      "id": "takt",
+      "inputs": [
+        480,
+        600,
+        45,
+        85,
+        97
+      ],
+      "result": {
+        "takt": 48,
+        "requiredCycle": 39.576,
+        "good": 527.68,
+        "gap": -72.32000000000005,
+        "coverage": 87.94666666666666,
+        "meets": false,
+        "impossible": false
+      },
+      "limitations": "Constant availability and yield; demand in good units."
+    },
+    {
+      "id": "queue",
+      "inputs": [
+        6,
+        10
+      ],
+      "result": {
+        "stable": true,
+        "rho": 0.6,
+        "L": 1.4999999999999998,
+        "Lq": 0.8999999999999999,
+        "W": 15,
+        "Wq": 9
+      },
+      "limitations": "Stationary M/M/1 under analytical assumptions."
+    },
+    {
+      "id": "queue-seeded",
+      "inputs": [
+        6,
+        10,
+        500,
+        3000,
+        5,
+        42
+      ],
+      "result": {
+        "schema": "rubedo.queue.simulation.v1",
+        "inputs": {
+          "arrival": 6,
+          "service": 10,
+          "warmup": 500,
+          "observations": 3000,
+          "replications": 5,
+          "seed": 42
+        },
+        "rho": 0.6,
+        "theoryWait": 9,
+        "theoryTotal": 15,
+        "wait": {
+          "mean": 8.838285552744026,
+          "sd": 1.4353496415064502,
+          "min": 7.398560173630378,
+          "max": 10.928890062073396
+        },
+        "total": {
+          "mean": 14.876923419777185,
+          "sd": 1.516238814591657,
+          "min": 13.29197738528671,
+          "max": 17.09405649937117
+        },
+        "waitFraction": {
+          "mean": 0.5933999999999999,
+          "sd": 0.023840208798489068,
+          "min": 0.5663333333333334,
+          "max": 0.623
+        },
+        "runs": [
+          {
+            "replication": 1,
+            "seed": 2581720956,
+            "meanWait": 7.398560173630378,
+            "meanTotal": 13.29197738528671,
+            "waitFraction": 0.573
+          },
+          {
+            "replication": 2,
+            "seed": 1925393290,
+            "meanWait": 10.928890062073396,
+            "meanTotal": 17.09405649937117,
+            "waitFraction": 0.623
+          },
+          {
+            "replication": 3,
+            "seed": 3661312704,
+            "meanWait": 9.23722721530396,
+            "meanTotal": 15.210173228274316,
+            "waitFraction": 0.5956666666666667
+          },
+          {
+            "replication": 4,
+            "seed": 2876485805,
+            "meanWait": 9.050688418545478,
+            "meanTotal": 15.165923190446549,
+            "waitFraction": 0.609
+          },
+          {
+            "replication": 5,
+            "seed": 750819978,
+            "meanWait": 7.576061894166913,
+            "meanTotal": 13.622486795507173,
+            "waitFraction": 0.5663333333333334
+          }
+        ]
+      },
+      "limitations": "Fixed seed; warmup bias may remain; replication spread is not a confidence interval."
+    },
+    {
+      "id": "resource-allocation",
+      "inputs": [
+        [
+          3,
+          5
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          8,
+          12
+        ]
+      ],
+      "result": {
+        "schema": "rubedo.optimization.lp2.v1",
+        "inputs": {
+          "values": [
+            3,
+            5
+          ],
+          "coefficients": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "limits": [
+            8,
+            12
+          ]
+        },
+        "best": {
+          "x": 2,
+          "y": 3,
+          "objective": 21,
+          "used": [
+            8,
+            12
+          ]
+        },
+        "alternativeOptima": false,
+        "vertices": [
+          {
+            "x": 2,
+            "y": 3,
+            "objective": 21,
+            "used": [
+              8,
+              12
+            ]
+          },
+          {
+            "x": 0,
+            "y": 4,
+            "objective": 20,
+            "used": [
+              8,
+              8
+            ]
+          },
+          {
+            "x": 4,
+            "y": 0,
+            "objective": 12,
+            "used": [
+              4,
+              12
+            ]
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "objective": 0,
+            "used": [
+              0,
+              0
+            ]
+          }
+        ],
+        "slack": [
+          0,
+          0
+        ]
+      },
+      "limitations": "Continuous LP; no integer quantities."
+    }
+  ]
+}

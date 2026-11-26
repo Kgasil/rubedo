@@ -1,2 +1,94 @@
-# rubedo
-Project Rubedo — Ciência e Inovação. Applied Science
+<p align="center"><img src="assets/readme-cover.svg" alt="Project Rubedo — Ciência e Inovação" width="760"></p>
+
+# Project Rubedo — Ciência e Inovação
+
+**Science & Innovation · Ciência e Inovação**  
+*Turning knowledge into discovery.*  
+*by K&G Vision*
+
+> **Marco 01 — Rubedo Public Lab 0.4.0 / edição pública experimental.** Integra o ecossistema GRAAL, preservando os marcos anteriores. Não é empresa constituída, laboratório certificado, serviço comercial ou solução industrial validada.
+
+[Site oficial](https://kgasil.github.io/rubedo/) · [Português](#português) · [English](#english) · [Modelos](docs/modelos.md) · [Planejamento](docs/planejamento.md) · [Publicação](docs/publicacao.md)
+
+## Português
+
+Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação computacional, pesquisa operacional e engenharia de produção. Sua missão é transformar perguntas em modelos, experimentos reproduzíveis e evidências com hipóteses e limitações explícitas. A iniciativa K&G Vision é individual hoje; no futuro, suas frentes poderão operar com autonomia e coordenação comum. Rubedo não substitui Genesis (estudo), Argus (engenharia e segurança de IA), Aeris (produtividade) ou Lilium (inteligência empresarial).
+
+## Acesso rápido / Quick access
+
+[**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 0.3.0 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
+
+| Recurso / Resource | Descrição / Scope |
+| --- | --- |
+| [Site institucional / Website](index.html) | Proposta, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
+| [Research Workspace](research/index.html) | Quatro modelos de pesquisa e caderno científico / Four research models and notebook |
+| [Mini Lab 0.3.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
+| [Mini Extension 0.3.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
+| [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v0.3.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
+| [Resultados reproduzíveis / Reproducible results](examples/reference-results.json) | Cinco casos de referência sintéticos / Five synthetic reference cases |
+
+## Research Workspace — 0.3.0
+
+| ID | Modelo / Model | Entrega / Output |
+| --- | --- | --- |
+| R01 | Sensibilidade de capacidade / Capacity sensitivity | Três cenários de ciclo, produção estimada / Three cycle scenarios and estimated output |
+| R02 | Fila analítica M/M/1 / Analytical queue | Utilização, espera e permanência em regime estacionário / Utilization, wait and sojourn in steady state |
+| R03 | Simulação estocástica M/M/1 / Stochastic simulation | Sementes, aquecimento, repetições, médias, gráfico e JSON / Seeds, warmup, replications, means, chart and JSON |
+| R04 | Otimização contínua / Continuous optimization | Dois produtos, dois recursos, solução por vértices, folgas, região viável e JSON / Two products, two resources, vertex solution, slack, feasible region and JSON |
+| R05 | Caderno de pesquisa / Research notebook | Protocolo JSON, exportação e restauração explícita / Explicit protocol export and restore |
+
+## Mini Edition — 0.3.0
+
+| Ferramenta / Tool | Web | Extensão / Extension |
+| --- | --- | --- |
+| Capacidade estimada / Estimated capacity | Sim / Yes | Sim / Yes |
+| Gargalos de linha serial / Serial line bottlenecks | Sim / Yes | Sim / Yes |
+| Comparação descritiva / Descriptive comparison | Sim / Yes | Sim / Yes |
+| Takt e demanda / Takt and demand | Sim / Yes | Sim / Yes |
+
+Interfaces PT/EN; exemplos fictícios; cópia manual e exportação JSON dos resultados calculados. Não há conta, IA conectada, telemetria, leitura automática de páginas, permissões especiais ou armazenamento persistente. Exportações contêm as entradas informadas: use dados sintéticos ou autorizados. Comparações descritivas não demonstram significância, causalidade ou melhoria.
+
+### Executar o site / Run the site
+
+Extraia o pacote completo. Na raiz, execute `python -m http.server 8000 --bind 127.0.0.1` e abra `http://127.0.0.1:8000/`. Não é necessário backend. O servidor estático aproxima a experiência do GitHub Pages. / Extract the package, run the command from its root and open the local URL. No backend is required.
+
+### Instalação manual da extensão
+
+1. Baixe e extraia o [ZIP de instalação](downloads/Rubedo-Mini-v0.3.0-install.zip) em pasta permanente.
+2. No computador, abra `chrome://extensions/` ou `edge://extensions/`.
+3. Ative o modo desenvolvedor, se permitido, e selecione **Carregar sem compactação**.
+4. Selecione a pasta extraída que contém `manifest.json`, não o ZIP.
+5. Abra Rubedo Mini e teste os exemplos fictícios. Para atualizar, substitua os arquivos e clique em Recarregar; para remover, clique em Remover.
+
+[Guia detalhado](extension/README.md) · [SHA-256](downloads/SHA256SUMS.txt). Não contorne políticas administrativas. A interface foi testada isoladamente, mas a instalação real em Chrome/Edge permanece pendente. Não está nas lojas.
+
+## English
+
+Rubedo is an applied research and computational engineering initiative within K&G Vision, focused on mathematical modeling, operations research, scenario analysis and reproducible experiments. The Research Workspace includes capacity sensitivity, an analytical M/M/1 queue, seeded stochastic queue simulation, a continuous two-variable linear program and a local JSON research notebook. The Mini Lab offers four tools and the extension four. All are exploratory prototypes, not validated industrial decisions, commercial services or accredited research. See [model assumptions](docs/modelos.md) and [experiment protocols](docs/experimentos.md).
+
+**Manual extension installation:** Extract the installation ZIP. On desktop Chrome or Edge, open the extensions page, enable Developer mode where permitted, select Load unpacked, and choose the extracted folder containing manifest.json. Reload to update; Remove to uninstall. Manual acceptance in the actual extension environment is pending.
+
+## Desenvolvimento e validação / Development and validation
+
+```sh
+node tests/mini.test.js
+node tests/research.test.js
+node tests/advanced.test.js
+node scripts/reference_results.js --check
+python3 tests/check_package.py
+```
+
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). Testes HTTP/deploy e instalação nativa ainda dependem da publicação e da aceitação manual. / See GitHub Actions for current CI status.
+
+## Ecossistema GRAAL / GRAAL ecosystem
+
+| Projeto | Missão | Acesso |
+| --- | --- | --- |
+| K&G Vision | Coordenação e direção / Coordination | [Portal](https://kgasil.github.io/) |
+| Genesis | Sabedoria e Aplicação / Learn | [Site](https://kgasil.github.io/genesis/) |
+| Rubedo | Ciência e Inovação / Discover | [Site](https://kgasil.github.io/rubedo/) |
+| Argus | Segurança e Desenvolvimento / Build | [Site](https://kgasil.github.io/argus/) |
+| Aeris | Eficiência e Simplicidade / Simplify | [Site](https://kgasil.github.io/aeris/) |
+| Lilium | Estratégia e Crescimento / Transform | [Site](https://kgasil.github.io/lilium/) |
+
+A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistema.md). Preservar versões, funcionalidades e marcos anteriores. A identidade é conceitual e a disponibilidade comercial do nome não foi verificada.

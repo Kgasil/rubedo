@@ -1,0 +1,20 @@
+# 0.4.0 — Marco 01 / public experimental edition
+
+- Live demo on landing page; Mini 0.3.0 includes loss decomposition, demand coverage and bottlenecks in extension.
+- Manual installation only; no store publication. Prior milestones preserved.
+
+# Histórico de preparação / Preparation history
+
+## 0.3.0 — próxima prévia local (não publicada)
+- Site ampliado, pesquisa reproduzível, atalhos, correção de HTML e layout testado isoladamente.
+- Research Workspace: simulação de filas com sementes, aquecimento e repetições; programação linear contínua com gráfico de região viável; caderno com importação JSON validada.
+- Mini Lab e extensão 0.2.0: takt/demanda, PT/EN, exportação JSON, entradas decimais mais estritas e ícones.
+- Script de empacotamento da extensão, cinco casos de referência e CI de navegador.
+- Testes locais de regras, pacote e interfaces carregadas em memória; publicação HTTP e instalação real ainda pendentes.
+- Nenhuma alteração de marco ou versão dos demais projetos.
+
+## 0.2.0 — preparação
+Research Workspace com sensibilidade, M/M/1 analítica e exportação de protocolo. Perspectiva de frentes coordenadas.
+
+## 0.1.0 — preparação
+Site, identidade, Mini Lab e extensão inicial, documentação e testes.
