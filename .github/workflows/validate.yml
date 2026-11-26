@@ -17,6 +17,8 @@ jobs:
       - run: node tests/mini.test.js && node tests/research.test.js && node tests/advanced.test.js && node tests/scenario.test.js
       - run: node scripts/reference_results.js --check
       - run: python3 tests/check_package.py
+      - run: python3 tests/verify_mini_package.py
+      - run: node tests/monte.test.js && node tests/precision.test.js && node tests/statistics.test.js
   browser:
     runs-on: ubuntu-24.04
     steps:
