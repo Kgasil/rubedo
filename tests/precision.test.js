@@ -1,0 +1,1 @@
+const assert=require('node:assert/strict');const p=require('../research/precision.js');const v=p('1 2 3');assert.equal(v.mean,2);assert.equal(v.sd,1);assert.equal(v.se,1/Math.sqrt(3));assert.equal(p('4 4').sd,0);assert.equal(p('1,5;2,5').mean,2);for(const x of ['','1','1 NaN','1e99 2','1,2,3 4'])assert.throws(()=>p(x));console.log('Precision checks passed');
