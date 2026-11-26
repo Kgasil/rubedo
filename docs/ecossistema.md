@@ -1,8 +1,8 @@
-# Arquitetura organizacional proposta — K&G Vision / GRAAL
+# Visão organizacional futura — K&G Vision / GRAAL
 
 ## Situação atual e visão
 
-K&G Vision é uma iniciativa tecnológica independente conduzida individualmente. Genesis, Rubedo (proposto), Argus, Aeris e Lilium são projetos com identidades e missões próprias. A visão futura é que se tornem frentes autônomas ou organizações especializadas coordenadas por uma estrutura central. Isso não representa constituição jurídica, filiais, equipes, contratos, serviços comerciais ou disponibilidade operacional hoje.
+K&G Vision é uma iniciativa tecnológica independente conduzida individualmente. Genesis, Rubedo, Argus, Aeris e Lilium são projetos com identidades e missões próprias. A visão futura é que se tornem frentes autônomas ou organizações especializadas coordenadas por uma estrutura central. Isso não representa constituição jurídica, filiais, equipes, contratos, serviços comerciais ou disponibilidade operacional hoje.
 
 ## Fronteiras de atuação
 

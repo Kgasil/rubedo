@@ -20,7 +20,7 @@ Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação 
 
 | Recurso / Resource | Descrição / Scope |
 | --- | --- |
-| [Site institucional / Website](index.html) | Proposta, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
+| [Site institucional / Website](index.html) | Missão, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
 | [Research Workspace](research/index.html) | Quatro modelos de pesquisa e caderno científico / Four research models and notebook |
 | [Mini Lab 0.3.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
 | [Mini Extension 0.3.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
