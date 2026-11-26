@@ -47,6 +47,11 @@ R06 e R07 são adições experimentais ao Workspace; testes adicionados, execuç
 | R08 | Regressão linear / Linear regression | Pearson, R², RMSE, resíduos e JSON |
 | R09 | Confiabilidade / Reliability | Série, paralelo, MTTF e JSON |
 
+
+## Experiment Library & Research Studio
+
+[8 protocolos / 8 protocols](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
+
 ## Mini Edition — 0.3.0
 
 | Ferramenta / Tool | Web | Extensão / Extension |
