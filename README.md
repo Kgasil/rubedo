@@ -127,7 +127,7 @@ O escudo institucional mantém o topo roxo e rosa, o núcleo branco e a ponta in
 | Genesis | Sabedoria e Aplicação / Learn | [Site](https://kgasil.github.io/genesis/) |
 | Rubedo | Ciência e Inovação / Discover | [Site](https://kgasil.github.io/rubedo/) |
 | Argus | Segurança e Desenvolvimento / Build | [Site](https://kgasil.github.io/argus/) |
-| Aeris | Eficiência e Simplicidade / Simplify | [Site](https://kgasil.github.io/aeris/) · [Status Desktop RC5](https://kgasil.github.io/aeris/release-status.html) · [Extension 1.0.0](https://kgasil.github.io/aeris/extension-preview.html) |
+| Aeris | Eficiência e Simplicidade / Simplify | [Site](https://kgasil.github.io/aeris/) · [Desktop 1.1.0 RC1 — prévia experimental](https://kgasil.github.io/aeris/#instalacao) · [Extension 1.0.0](https://kgasil.github.io/aeris/extension-preview.html) |
 | Lilium | Estratégia e Crescimento / Transform | [Site](https://kgasil.github.io/lilium/) |
 
 A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistema.md). Preservar versões, funcionalidades e marcos anteriores. A identidade é conceitual e a disponibilidade comercial do nome não foi verificada.
