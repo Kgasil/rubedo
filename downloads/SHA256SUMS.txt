@@ -1,1 +1,1 @@
-ee1bcf4a225783dd60a332ba1720d14127c2c9b88f213ee8e29f4872bd12f1c8  Rubedo-Mini-v0.3.0-install.zip
+1799dc6ccadd786eb960f38c4f7d67cf241e9630942a9e69daebfe96fcfe6ab2  Rubedo-Mini-v1.0.0-install.zip

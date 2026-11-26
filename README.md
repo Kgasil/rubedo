@@ -12,7 +12,7 @@
 
 ## Research Workspace 1.0 — 26/11/2026
 
-Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension remain 0.3.0; manual installation only. Independent automated regression results for the latest revision are not confirmed. Not validated for industrial decisions or certified research.
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. Independent automated regression results for the latest revision are not confirmed. Not validated for industrial decisions or certified research.
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
@@ -24,15 +24,15 @@ Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação 
 
 O simulador da página inicial agora permite continuar o cenário de ciclo e demanda no Mini Lab por um link com valores fictícios no fragmento da URL, sem envio desses valores ao servidor. / The landing demo can transfer a synthetic cycle and demand scenario into the Mini Lab via a URL fragment, without sending the values to the server.
 
-[**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 0.3.0 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
+[**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 1.0.0 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
 
 | Recurso / Resource | Descrição / Scope |
 | --- | --- |
 | [Site institucional / Website](index.html) | Missão, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
 | [Research Workspace](research/index.html) | Oito modelos de pesquisa e caderno científico / Eight research models and notebook |
-| [Mini Lab 0.3.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
-| [Mini Extension 0.3.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
-| [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v0.3.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
+| [Mini Lab 1.0.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
+| [Mini Extension 1.0.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
+| [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v1.0.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
 | [Resultados reproduzíveis / Reproducible results](examples/reference-results.json) | Cinco casos de referência sintéticos / Five synthetic reference cases |
 
 ## Research Workspace — 1.0 (experimental)
@@ -58,7 +58,7 @@ R06 e R07 são adições experimentais ao Workspace; testes adicionados, execuç
 
 [8 protocolos / 8 protocols](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
 
-## Mini Edition — 0.3.0
+## Mini Edition — 1.0.0
 
 | Ferramenta / Tool | Web | Extensão / Extension |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ Extraia o pacote completo. Na raiz, execute `python -m http.server 8000 --bind 1
 
 ### Instalação manual da extensão
 
-1. Baixe e extraia o [ZIP de instalação](downloads/Rubedo-Mini-v0.3.0-install.zip) em pasta permanente.
+1. Baixe e extraia o [ZIP de instalação](downloads/Rubedo-Mini-v1.0.0-install.zip) em pasta permanente.
 2. No computador, abra `chrome://extensions/` ou `edge://extensions/`.
 3. Ative o modo desenvolvedor, se permitido, e selecione **Carregar sem compactação**.
 4. Selecione a pasta extraída que contém `manifest.json`, não o ZIP.
@@ -103,7 +103,7 @@ node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension permanecem em 0.3.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension chegam à versão 1.0.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 

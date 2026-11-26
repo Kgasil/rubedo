@@ -28,10 +28,10 @@ for p,h in htmls.items():
             assert scenario or u.fragment in htmls[target].ids,(p,link)
         count+=1
 manifest=json.loads((ROOT/'extension/manifest.json').read_text())
-assert manifest['manifest_version']==3 and manifest['version']=='0.3.0'
+assert manifest['manifest_version']==3 and manifest['version']=='1.0.0'
 assert not any(manifest.get(k) for k in ('permissions','host_permissions','content_scripts','background'))
 expected={'manifest.json','popup.html','core.js','ui.js','style.css'} | set(manifest['icons'].values())
-archive=ROOT/'downloads/Rubedo-Mini-v0.3.0-install.zip'
+archive=ROOT/'downloads/Rubedo-Mini-v1.0.0-install.zip'
 with zipfile.ZipFile(archive) as z:
     assert set(z.namelist())==expected and z.testzip() is None
     for name in expected: assert z.read(name)==(ROOT/'extension'/name).read_bytes()

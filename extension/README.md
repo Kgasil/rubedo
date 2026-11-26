@@ -1,10 +1,10 @@
-# Rubedo Mini — 0.3.0 · prévia experimental
+# Rubedo Mini — 1.0.0 · prévia experimental
 
 Capacidade de produção aproximada, comparação descritiva de séries e takt/demanda. PT/EN, exemplos fictícios, cópia e exportação JSON local, ícones próprios. O Mini Lab e a extensão também identificam gargalos em uma linha serial ideal. Os resultados não substituem análise profissional, teste de hipótese ou validação industrial.
 
 ## Instalação manual / Manual installation
 
-1. Baixe [Rubedo Mini v0.3.0](../downloads/Rubedo-Mini-v0.3.0-install.zip) e extraia em pasta permanente.
+1. Baixe [Rubedo Mini v1.0.0](../downloads/Rubedo-Mini-v1.0.0-install.zip) e extraia em pasta permanente.
 2. Abra `chrome://extensions/` ou `edge://extensions/` em um computador.
 3. Ative o modo desenvolvedor, se permitido, e escolha **Carregar sem compactação**.
 4. Selecione a pasta que contém `manifest.json`.
@@ -18,4 +18,4 @@ Manifest V3 sem permissões declaradas, scripts de conteúdo, background, conta,
 
 [Mini Lab](../mini/index.html) · [Site e tutorial](../index.html#instalar) · [Model assumptions](../docs/modelos.md)
 
-[Site e tutorial](https://kgasil.github.io/rubedo/#instalar) · [Download ZIP](https://github.com/Kgasil/rubedo/raw/refs/heads/main/downloads/Rubedo-Mini-v0.3.0-install.zip). A versão 0.3.0 inclui gargalos, perdas de disponibilidade e qualidade e cobertura da demanda.
+[Site e tutorial](https://kgasil.github.io/rubedo/#instalar) · [Download ZIP](https://github.com/Kgasil/rubedo/raw/refs/heads/main/downloads/Rubedo-Mini-v1.0.0-install.zip). A versão 1.0.0 inclui gargalos, perdas de disponibilidade e qualidade e cobertura da demanda.
