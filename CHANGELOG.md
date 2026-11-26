@@ -33,3 +33,8 @@ Site, identidade, Mini Lab e extensão inicial, documentação e testes.
 - Precisão de medição, Monte Carlo triangular, regressão linear e confiabilidade exponencial.
 - Exportação JSON em R08/R09 e testes de referência adicionados; execução atual pendente.
 - Public Lab 1.0 histórico e Mini 0.3.0 preservados.
+
+
+## Experiment Library & Research Studio
+- Eight reference protocols and local results studio with manual scenario comparison and JSON/TXT export.
+- Browser acceptance pending; Public Lab milestone unchanged.
