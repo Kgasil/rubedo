@@ -85,7 +85,7 @@ Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 
-<p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
+<p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg?v=20261126-2" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
 
 O escudo institucional mantém as quatro cores laterais e o núcleo branco; Rubedo ocupa as pontas superior (laranja) e inferior (dourado). / The institutional shield preserves four side colors and its white core; Rubedo occupies the upper orange and lower gold tips.
 
@@ -101,3 +101,5 @@ O escudo institucional mantém as quatro cores laterais e o núcleo branco; Rube
 | Lilium | Estratégia e Crescimento / Transform | [Site](https://kgasil.github.io/lilium/) |
 
 A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistema.md). Preservar versões, funcionalidades e marcos anteriores. A identidade é conceitual e a disponibilidade comercial do nome não foi verificada.
+
+[![K&G Vision — GRAAL](https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/kg-symbol.svg?v=20261126-2)](https://kgasil.github.io/) **GRAAL · Marco 01** — identidade integrada / integrated identity.
