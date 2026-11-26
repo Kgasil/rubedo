@@ -23,7 +23,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | Recurso / Resource | Descrição / Scope |
 | --- | --- |
 | [Site institucional / Website](index.html) | Missão, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
-| [Research Workspace](research/index.html) | Seis modelos de pesquisa e caderno científico / Six research models and notebook |
+| [Research Workspace](research/index.html) | Oito modelos de pesquisa e caderno científico / Eight research models and notebook |
 | [Mini Lab 0.3.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
 | [Mini Extension 0.3.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
 | [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v0.3.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
@@ -43,6 +43,9 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | R07 | Monte Carlo triangular / Triangular Monte Carlo | Semente, percentis e frequência de meta / Seed, quantiles and target frequency |
 
 R06 e R07 são adições experimentais ao Workspace; testes adicionados, execução atual ainda não confirmada. / Experimental additions; new test execution not yet confirmed.
+
+| R08 | Regressão linear / Linear regression | Pearson, R², RMSE, resíduos e JSON |
+| R09 | Confiabilidade / Reliability | Série, paralelo, MTTF e JSON |
 
 ## Mini Edition — 0.3.0
 
@@ -84,6 +87,7 @@ node tests/advanced.test.js
 node tests/scenario.test.js
 node tests/precision.test.js
 node tests/monte.test.js
+node tests/statistics.test.js
 node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
