@@ -101,6 +101,11 @@ with sync_playwright() as p:
         }""",[foreground,background])
         assert ratio>=threshold,(selector,ratio,threshold)
         print('Contrast',selector,round(ratio,2))
+    def official_palette(panel,primary):
+        expected={'body':('background-color','rgb(33, 16, 13)'),panel:('background-color','rgb(44, 25, 21)'),primary:('background-color','rgb(234, 196, 119)')}
+        for selector,(prop,value) in expected.items():
+            expect(page.locator(selector).first).to_have_css(prop,value)
+    check('research matches official portal palette',lambda:official_palette('.card','#sensitivity-run'))
     check('research text contrast',lambda:contrast('#minutes'))
     check('research control boundary contrast',lambda:contrast('#minutes','borderTopColor','backgroundColor',3))
     check('research primary contrast',lambda:contrast('#sensitivity-run'))
@@ -155,7 +160,7 @@ with sync_playwright() as p:
         check('Mini keyboard mode switch',lambda:expect(page.locator('[data-mode="line"]')).to_have_attribute('aria-pressed','true'))
         check('Mini mode explanation updated',lambda:expect(page.locator('#tool-guide')).to_contain_text('estação'))
         page.locator('[data-mode="capacity"]').click()
-    load('mini/index.html');mini_accessibility();check('Mini 320px reflow',no_overflow)
+    load('mini/index.html');check('Mini matches official portal palette',lambda:official_palette('.panel','#run'));mini_accessibility();check('Mini primary contrast',lambda:contrast('#run'));check('Mini 320px reflow',no_overflow)
     page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');lang_pt();page.locator('[data-mode="capacity"]').click();mini_accessibility();page.set_viewport_size({'width':320,'height':600});check('popup 320px reflow',no_overflow);assert not errors,errors;browser.close()
 if server:server.shutdown()
 print(f'{count} browser interface checks passed ({"in-memory" if args.in_memory else "HTTP"}); no page errors.')

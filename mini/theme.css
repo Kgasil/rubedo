@@ -1,0 +1,7 @@
+/* Web-only Rubedo palette, aligned with the official portal. The signed-off extension ZIP is unchanged. */
+:root{color-scheme:dark;--bg:#21100d;--panel:#2c1915;--ink:#f9e7d8;--muted:#d1ae94;--line:#624033;--gold:#eac477;--orange:#ee7441;--control:#b88666;--accent:var(--gold)}
+button{background:#40251d;border-color:var(--control)}
+button[aria-pressed=true],.primary{background:var(--gold);border-color:var(--gold);color:#24120c}
+.tool-grid button[aria-pressed=true]{box-shadow:inset 0 -3px #9b4d2e}
+.tool-guide{border-left-color:var(--orange)}
+.panel{box-shadow:0 3px 12px #10070b33}

@@ -10,8 +10,8 @@
 /* Explicit high contrast brand on the dark header, including visited links. */
 .header{background:#21100D;color:#FFF5EB}.header .brand,.header .brand:visited{color:#FFF5EB}.header .brand strong{color:#FFF5EB;font-weight:800}.header .brand small{color:#F2B77D;font-weight:700}.header .brand small:last-child{color:#E8CDB7}
 
-/* Stage 04: research-scoped dark wine surfaces, readable controls, and reflow. */
-body.research-workspace{--bg:#211017;--panel:#321b25;--ink:#fff2e9;--muted:#e0c3c6;--line:#76505e;--control:#bd899b;--gold:#f2cb84;--orange:#ffaf83;--wine:#c87994}
+/* Research inherits the official Rubedo portal palette; warm high-contrast controls. */
+body.research-workspace{--control:#b88666;--wine:var(--orange)}
 .research-workspace .header{background:var(--bg)}
 .research-workspace .wrap{min-width:0}
 .research-workspace .section{padding:clamp(28px,5vw,58px) 0;scroll-margin-top:12px}
@@ -39,7 +39,7 @@ body.research-workspace{--bg:#211017;--panel:#321b25;--ink:#fff2e9;--muted:#e0c3
 .research-workspace table{background:var(--bg);border-radius:8px}
 .research-workspace caption{text-align:left;font-weight:700;color:var(--muted);padding:8px 0}
 .research-workspace th{background:var(--panel)}
-.research-workspace tbody tr:nth-child(even){background:#2a1620}
+.research-workspace tbody tr:nth-child(even){background:var(--panel)}
 .research-workspace #st-table table{min-width:1040px;table-layout:auto}
 .research-workspace #st-table td{min-width:70px;max-width:240px;overflow-wrap:anywhere}
 .research-workspace pre{background:var(--bg);padding:16px;border:1px solid var(--line);border-radius:10px;font:inherit;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;white-space:pre-wrap}
