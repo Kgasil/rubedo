@@ -1,4 +1,4 @@
-/* Rubedo Mini 0.3.0 — deterministic local engineering calculations. */
+/* Rubedo Mini 1.0.1 (candidate) — deterministic local engineering calculations. */
 (function(root){'use strict';
 function number(v,name,min,max){if(typeof v==='string'&&/^[+-]?(?:\d+(?:[.,]\d+)?|[.,]\d+)$/.test(v.trim()))v=Number(v.trim().replace(',','.'));if(typeof v!=='number'||!Number.isFinite(v)||v<min||v>max)throw Error(name+' deve estar entre '+min+' e '+max+'.');return v;}
 function capacity(minutes,cycle,availability,yieldRate){const m=number(minutes,'Minutos',1,1440),c=number(cycle,'Ciclo (segundos)',.1,86400),a=number(availability,'Disponibilidade (%)',0,100)/100,y=number(yieldRate,'Rendimento (%)',0,100)/100;const theoretical=m*60/c,effective=theoretical*a,good=effective*y;return {theoretical,effective,good,availabilityLoss:theoretical-effective,qualityLoss:effective-good,goodRatio:100*good/theoretical};}

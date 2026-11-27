@@ -1,7 +1,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
-import json, zipfile, hashlib, re
+import json, zipfile, hashlib, re, tempfile, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 class Links(HTMLParser):
     def __init__(self): super().__init__(); self.refs=[]; self.ids=set()
@@ -28,12 +28,19 @@ for p,h in htmls.items():
             assert scenario or u.fragment in htmls[target].ids,(p,link)
         count+=1
 manifest=json.loads((ROOT/'extension/manifest.json').read_text())
-assert manifest['manifest_version']==3 and manifest['version']=='1.0.0'
+assert manifest['manifest_version']==3 and manifest['version']=='1.0.1'
 assert not any(manifest.get(k) for k in ('permissions','host_permissions','content_scripts','background'))
 expected={'manifest.json','popup.html','core.js','ui.js','style.css'} | set(manifest['icons'].values())
-archive=ROOT/'downloads/Rubedo-Mini-v1.0.0-install.zip'
-with zipfile.ZipFile(archive) as z:
-    assert set(z.namelist())==expected and z.testzip() is None
-    for name in expected: assert z.read(name)==(ROOT/'extension'/name).read_bytes()
-assert (ROOT/'downloads/SHA256SUMS.txt').read_text().split()[0]==hashlib.sha256(archive.read_bytes()).hexdigest()
+# Test candidate ZIP reproducibility without touching public downloads.
+with tempfile.TemporaryDirectory() as d1, tempfile.TemporaryDirectory() as d2:
+    for directory in (d1,d2):
+        subprocess.run([sys.executable,str(ROOT/'scripts/package_extension.py'),'--output-dir',directory],check=True)
+    name=f"Rubedo-Mini-v{manifest['version']}-install.zip"
+    archive=Path(d1)/name
+    assert archive.read_bytes()==(Path(d2)/name).read_bytes()
+    with zipfile.ZipFile(archive) as z:
+        assert len(z.namelist())==len(expected) and set(z.namelist())==expected and z.testzip() is None
+        for name in expected: assert z.read(name)==(ROOT/'extension'/name).read_bytes()
+    assert (Path(d1)/'SHA256SUMS.txt').read_text().split()[0]==hashlib.sha256(archive.read_bytes()).hexdigest()
+    print('Candidate reproducible SHA-256:', hashlib.sha256(archive.read_bytes()).hexdigest())
 print(f'{len(htmls)} HTML pages; {count} local links; manifest and ZIP integrity OK')

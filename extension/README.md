@@ -19,3 +19,5 @@ Manifest V3 sem permissões declaradas, scripts de conteúdo, background, conta,
 [Mini Lab](../mini/index.html) · [Site e tutorial](../index.html#instalar) · [Model assumptions](../docs/modelos.md)
 
 [Site e tutorial](https://kgasil.github.io/rubedo/#instalar) · [Download ZIP](https://github.com/Kgasil/rubedo/raw/refs/heads/main/downloads/Rubedo-Mini-v1.0.0-install.zip). A versão 1.0.0 inclui gargalos, perdas de disponibilidade e qualidade e cobertura da demanda.
+
+**Candidato / Candidate 1.0.1:** a fonte nesta branch e os JSONs exportados identificam 1.0.1. O ZIP público 1.0.0 continua intacto. Candidate packaging is staging-only; no new release or store submission.

@@ -20,7 +20,7 @@
 
 ## Research Workspace 1.0 — 26/11/2026
 
-Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. Independent automated regression results for the latest revision are not confirmed. Not validated for industrial decisions or certified research.
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. Baseline automated regression passed at eaa1dd5770; see the linked validation run. Candidate 1.0.1 remains unapproved. Not validated for industrial decisions or certified research.
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
@@ -56,7 +56,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | R06 | Precisão de medição / Measurement precision | Média, desvio amostral e erro padrão / Mean, sample deviation and standard error |
 | R07 | Monte Carlo triangular / Triangular Monte Carlo | Semente, percentis e frequência de meta / Seed, quantiles and target frequency |
 
-R06 e R07 são adições experimentais ao Workspace; testes adicionados, execução atual ainda não confirmada. / Experimental additions; new test execution not yet confirmed.
+R06 e R07 são adições experimentais ao Workspace; testes da versão pública de referência aprovados na execução 46007461543. / Experimental additions; new baseline tests passed in run 46007461543; candidate tests pending.
 
 | R08 | Regressão linear / Linear regression | Pearson, R², RMSE, resíduos e JSON |
 | R09 | Confiabilidade / Reliability | Série, paralelo, MTTF e JSON |
@@ -111,7 +111,7 @@ node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension chegam à versão 1.0.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py --output-dir /tmp/rubedo-candidate`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension chegam à versão 1.0.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 
@@ -138,3 +138,7 @@ A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistem
 
 
 **[Central de distribuição GRAAL / GRAAL distribution center](https://kgasil.github.io/distribuicao.html)** — versões, canais oficiais, limitações e estado de segurança / versions, official channels, limitations and security status.
+
+## Candidato científico / Scientific candidate 1.0.1
+
+Branch de desenvolvimento, não publicada / Unreleased development branch. R04 uses exact rational vertex comparisons; displayed values remain rounded. Mini source and exports identify 1.0.1; the public ZIP stays 1.0.0. See [scientific validation](docs/scientific-precision-1.0.1.md). [Baseline CI](https://github.com/Kgasil/rubedo/actions/runs/46007461543).

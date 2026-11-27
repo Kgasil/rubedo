@@ -49,10 +49,10 @@ def main():
             require(m["action"]["default_popup"] == "popup.html" and m["action"]["default_icon"] == ICONS and m["icons"] == ICONS, "Unexpected entry points")
             for n, name in ICONS.items():
                 png_check(z.read(name), int(n))
-            if version == "1.0.0":
+            if version == json.loads((ROOT / "extension" / "manifest.json").read_text())["version"]:
                 for name in EXPECTED:
                     require(z.read(name) == (ROOT / "extension" / name).read_bytes(), f"Source mismatch: {name}")
-            print(f"{version}: SHA-256, 9 entries, CRC, manifest, PNG structure PASS" + (", source parity PASS" if version == "1.0.0" else " (historical package; no comparison to current source)"))
+            print(f"{version}: SHA-256, 9 entries, CRC, manifest, PNG structure PASS" + (", source parity PASS" if version == json.loads((ROOT / "extension" / "manifest.json").read_text())["version"] else " (historical package; no comparison to current source)"))
     print("Integrity only; not an antivirus scan or installation approval.")
 if __name__ == "__main__":
     main()
