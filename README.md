@@ -20,7 +20,7 @@
 
 ## Research Workspace 1.0 — 26/11/2026
 
-Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. Independent automated regression results for the latest revision are not confirmed. Not validated for industrial decisions or certified research.
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. At the initial release, independent automated regression results were not confirmed. Subsequent first-party CI ([run 46007461543](https://github.com/Kgasil/rubedo/actions/runs/46007461543)) passed package, rule and browser checks; this is not independent scientific validation. / No lançamento inicial, regressões independentes não estavam confirmadas; CI posterior de primeira parte aprovou verificações de pacote, regras e navegador, sem validação científica independente. Not validated for industrial decisions or certified research.
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
