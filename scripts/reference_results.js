@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');const mini=require('../extension/core.js'),research=require('../research/core.js'),advanced=require('../research/advanced.js');
-const report={schema:'rubedo.reference.results.v1',release:'0.4.0',data:'synthetic',cases:[
+const report={schema:'rubedo.reference.results.v1',release:'1.0.1-candidate',data:'synthetic',cases:[
 {id:'capacity',inputs:[480,45,85,97],result:mini.capacity(480,45,85,97),limitations:'Simplified continuous flow; no setups or material limits.'},
 {id:'takt',inputs:[480,600,45,85,97],result:mini.takt(480,600,45,85,97),limitations:'Constant availability and yield; demand in good units.'},
 {id:'queue',inputs:[6,10],result:research.queue(6,10),limitations:'Stationary M/M/1 under analytical assumptions.'},

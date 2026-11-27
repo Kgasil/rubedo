@@ -19,3 +19,10 @@ A execução HTTP anterior do GitHub Actions foi aprovada em [45747921238](https
 ## Public Lab 1.0 — revisão técnica de lançamento
 
 [CI aprovado](https://github.com/Kgasil/rubedo/actions/runs/45749793253), revisão `a2985b044fadad6dd52ff8039a945f2d4e7b838e`: 30 testes Mini + 21 de pesquisa + 22 avançados + 11 de transferência = 84. 43 verificações de interface Chromium HTTP sem erros de página, cinco casos reproduzidos e 65 referências locais em quatro HTMLs; pacote ZIP íntegro. A promoção 1.0 altera a documentação e o rótulo da edição pública, não os motores ou a extensão. A aceitação real da extensão em Chrome/Edge e a validação independente ainda estão pendentes.
+
+## Candidato 1.0.1 — evidência CI (27/11/2026)
+
+[46067486777](https://github.com/Kgasil/rubedo/actions/runs/46067486777): 257 comparações independentes sintéticas, 97 verificações HTTP, 12 testes de segurança, pacote reproduzível e instalação isolada Chromium confirmados. [Matriz de homologação](homologation-1.0.1.md). Windows, antivírus atualizado e revisão manual pendentes.
+
+## Approval update — 2026-11-27
+Em 27/11/2026, o idealizador confirmou aprovação dos três grupos de testes manuais no candidato 1.0.1 (Chrome/Edge no Windows, Microsoft Defender atualizado sem detecções e revisão visual/teclado/acessibilidade) e autorizou a publicação. Resultados relatados, não reexecutados independentemente; logs do Defender, versões de navegador e capturas não fornecidos. / On 27 Nov 2026, the maintainer reported passing all three manual acceptance groups on candidate 1.0.1 and authorized publication. No independent rerun, raw Defender logs, browser versions or screenshots supplied.

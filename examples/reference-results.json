@@ -1,6 +1,6 @@
 {
   "schema": "rubedo.reference.results.v1",
-  "release": "0.4.0",
+  "release": "1.0.1-candidate",
   "data": "synthetic",
   "cases": [
     {

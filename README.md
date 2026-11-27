@@ -20,7 +20,7 @@
 
 ## Research Workspace 1.0 — 26/11/2026
 
-Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. At the initial release, independent automated regression results were not confirmed. Subsequent first-party CI ([run 46007461543](https://github.com/Kgasil/rubedo/actions/runs/46007461543)) passed package, rule and browser checks; this is not independent scientific validation. / No lançamento inicial, regressões independentes não estavam confirmadas; CI posterior de primeira parte aprovou verificações de pacote, regras e navegador, sem validação científica independente. Not validated for industrial decisions or certified research.
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. At the initial release, independent automated regression results were not confirmed. Subsequent first-party CI ([run 46007461543](https://github.com/Kgasil/rubedo/actions/runs/46007461543)) passed package, rule and browser checks; this was not independent scientific validation. Candidate 1.0.1 includes independent synthetic reference implementations, not external certification, and was subsequently approved by the maintainer. Not validated for industrial decisions or certified research.
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
@@ -38,9 +38,9 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | --- | --- |
 | [Site institucional / Website](index.html) | Missão, metodologia, identidade, instalação, roadmap e ecossistema / Mission, method, installation, roadmap and ecosystem |
 | [Research Workspace](research/index.html) | Oito modelos de pesquisa e caderno científico / Eight research models and notebook |
-| [Mini Lab 1.0.0](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
-| [Mini Extension 1.0.0](extension/README.md) | Quatro ferramentas locais / Four local tools |
-| [ZIP de instalação / Installation ZIP](downloads/Rubedo-Mini-v1.0.0-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
+| [Mini Lab 1.0.1](mini/index.html) | Quatro ferramentas de cálculo / Four calculation tools |
+| [Mini Extension 1.0.1](extension/README.md) | Quatro ferramentas locais / Four local tools |
+| [ZIP de instalação / Installation ZIP](https://kgasil.github.io/rubedo/downloads/Rubedo-Mini-v1.0.1-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
 | [Resultados reproduzíveis / Reproducible results](examples/reference-results.json) | Cinco casos de referência sintéticos / Five synthetic reference cases |
 
 ## Research Workspace — 1.0 (experimental)
@@ -56,7 +56,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | R06 | Precisão de medição / Measurement precision | Média, desvio amostral e erro padrão / Mean, sample deviation and standard error |
 | R07 | Monte Carlo triangular / Triangular Monte Carlo | Semente, percentis e frequência de meta / Seed, quantiles and target frequency |
 
-R06 e R07 são adições experimentais ao Workspace; testes adicionados, execução atual ainda não confirmada. / Experimental additions; new test execution not yet confirmed.
+R06 e R07 são adições experimentais ao Workspace; testes da versão pública de referência aprovados na execução 46007461543. / Experimental additions; new baseline tests passed in run 46007461543; candidate tests pending.
 
 | R08 | Regressão linear / Linear regression | Pearson, R², RMSE, resíduos e JSON |
 | R09 | Confiabilidade / Reliability | Série, paralelo, MTTF e JSON |
@@ -64,9 +64,9 @@ R06 e R07 são adições experimentais ao Workspace; testes adicionados, execuç
 
 ## Experiment Library & Research Studio
 
-[8 protocolos / 8 protocols](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
+[Biblioteca / Library](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
 
-## Mini Edition — 1.0.0
+## Mini Edition — 1.0.1
 
 | Ferramenta / Tool | Web | Extensão / Extension |
 | --- | --- | --- |
@@ -83,13 +83,13 @@ Extraia o pacote completo. Na raiz, execute `python -m http.server 8000 --bind 1
 
 ### Instalação manual da extensão
 
-1. Baixe e extraia o [ZIP de instalação](downloads/Rubedo-Mini-v1.0.0-install.zip) em pasta permanente.
+1. Baixe e extraia o [ZIP de instalação](https://kgasil.github.io/rubedo/downloads/Rubedo-Mini-v1.0.1-install.zip) em pasta permanente.
 2. No computador, abra `chrome://extensions/` ou `edge://extensions/`.
 3. Ative o modo desenvolvedor, se permitido, e selecione **Carregar sem compactação**.
 4. Selecione a pasta extraída que contém `manifest.json`, não o ZIP.
 5. Abra Rubedo Mini e teste os exemplos fictícios. Para atualizar, substitua os arquivos e clique em Recarregar; para remover, clique em Remover.
 
-[Guia detalhado](extension/README.md) · [SHA-256](downloads/SHA256SUMS.txt). Não contorne políticas administrativas. A interface foi testada isoladamente, mas a instalação real em Chrome/Edge permanece pendente. Não está nas lojas.
+[Guia detalhado](extension/README.md) · [SHA-256](downloads/SHA256SUMS.txt). Não contorne políticas administrativas. CI aprovou instalação isolada em Chromium; Chrome/Edge no Windows foram aprovados segundo relato do idealizador. Não está nas lojas.
 
 ## English
 
@@ -111,7 +111,7 @@ node scripts/reference_results.js --check
 python3 tests/check_package.py
 ```
 
-Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension chegam à versão 1.0.0. A instalação nativa ainda depende de aceitação manual. / See GitHub Actions for current CI status.
+Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão, use `python3 scripts/package_extension.py --output-dir /tmp/rubedo-candidate`. Para regenerar os casos de referência, use `node scripts/reference_results.js` e revise as diferenças. Não atualizar os resultados esperados para esconder erros. O CI preparado inclui sintaxe, testes, referência, pacote e navegador Playwright. Consulte [validação local](docs/validacao-local.md) e [histórico](CHANGELOG.md). A [revisão técnica que fundamenta a edição inicial 1.0](https://github.com/Kgasil/rubedo/actions/runs/45749793253) passou em 84 testes de regras, 43 verificações de interface via HTTP, cinco casos reproduzíveis e integridade do ZIP. A numeração 1.0 é do Public Lab; Research Workspace chega à edição experimental 1.0; Mini Lab e Mini Extension chegam à versão 1.0.0. A aceitação manual do candidato 1.0.1 foi posteriormente relatada pelo idealizador. / See GitHub Actions for current CI status.
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 
@@ -139,6 +139,10 @@ A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistem
 
 **[Central de distribuição GRAAL / GRAAL distribution center](https://kgasil.github.io/distribuicao.html)** — versões, canais oficiais, limitações e estado de segurança / versions, official channels, limitations and security status.
 
+## Rubedo 1.0.1 — edição experimental / experimental edition
+
+Publicação autorizada pelo idealizador / Maintainer-approved release. R04 uses exact rational vertex comparisons; displayed values remain rounded. Mini source and exports identify 1.0.1; the exact approved ZIP is 1.0.1; historical 1.0.0 remains available. See [scientific validation](docs/scientific-precision-1.0.1.md). [Baseline CI](https://github.com/Kgasil/rubedo/actions/runs/46007461543).
+
 <!-- graal-governance-v1:start -->
 ## Governança GRAAL / GRAAL governance
 
@@ -146,3 +150,25 @@ A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistem
 
 O catálogo é a referência institucional para o estado atual; registros históricos e avisos específicos deste repositório permanecem aplicáveis. Em caso de divergência, prevalece o estado mais restritivo. / The catalog is the institutional reference for current status; this repository's historical records and specific notices remain applicable. If records disagree, the most restrictive state prevails.
 <!-- graal-governance-v1:end -->
+
+### Etapa 03 / Stage 03 — candidate research reproducibility
+
+Candidate library: 12 synthetic protocols; Studio v2 adds declared source, parameters/seed, model version, UTC record timestamp and local JSON restoration, including explicit legacy migration. Comparisons require matching model, metric, unit and declared version. Imported/manual data are not independently authenticated. Python standard-library oracles run in CI; see [research reproducibility](docs/reproducibility-1.0.1.md). The maintainer subsequently approved 1.0.1.
+
+### Etapa 04 / Stage 04 — accessible research experience (candidate)
+
+Research navigation grouped by purpose, dark wine surfaces, higher-contrast controls, keyboard skip links, model interpretation guides, chart explanations, bilingual human-readable results and 320px reflow checks. Mini Lab and popup share the same visual treatment. Targeted automated checks are not a full WCAG conformance audit. See [accessibility evidence](docs/accessibility-1.0.1.md). Public release unchanged.
+
+### Etapa 05 / Stage 05 — Integrated Research Studio
+
+Eight research models can explicitly register a chosen numeric metric with its complete input/result snapshot, model version and limitations. R05 remains the separate research protocol notebook. Calculated records restored from files are labelled imported/unverified; no automatic storage or networking. See [integration notes](docs/studio-integration-1.0.1.md). Candidate only.
+
+### Etapa 06 / Stage 06 — security and distribution candidate
+
+Local assets, restrictive content policies, bounded file imports and isolated unpacked Chromium installation tests. No release, public ZIP replacement or store submission. See [security and release gates](docs/security-candidate-1.0.1.md). Branded Chrome/Edge on Windows and updated antivirus validation remain mandatory before release.
+
+### Etapa 07 / Stage 07 — homologação aprovada / acceptance approved
+
+[Evidence matrix / Matriz de evidências](docs/homologation-1.0.1.md): 10/10 internal acceptance, including 3 points of maintainer-reported manual tests; no external certification. Em 27/11/2026, o idealizador confirmou aprovação dos três grupos de testes manuais no candidato 1.0.1 (Chrome/Edge no Windows, Microsoft Defender atualizado sem detecções e revisão visual/teclado/acessibilidade) e autorizou a publicação. Resultados relatados, não reexecutados independentemente; logs do Defender, versões de navegador e capturas não fornecidos. / On 27 Nov 2026, the maintainer reported passing all three manual acceptance groups on candidate 1.0.1 and authorized publication. No independent rerun, raw Defender logs, browser versions or screenshots supplied.
+
+**Download 1.0.1:** [ZIP](https://kgasil.github.io/rubedo/downloads/Rubedo-Mini-v1.0.1-install.zip) · [SHA-256](downloads/SHA256SUMS.txt). Exact tested package retains the RC label in its popup to preserve the verified bytes. No antivirus certification or store listing.

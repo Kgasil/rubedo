@@ -45,7 +45,7 @@ with sync_playwright() as p:
     def export_json(button,validate):
         with page.expect_download(timeout=10000) as d:page.locator(button).click()
         record=json.loads(Path(d.value.path()).read_text());validate(record)
-    def mini_record(rec):assert rec['schema']=='rubedo.mini.result.v1' and rec['tool']=='takt' and abs(rec['result']['good']-527.68)<1e-8
+    def mini_record(rec):assert rec['schema']=='rubedo.mini.result.v1' and rec['tool']=='takt' and abs(rec['result']['good']-527.68)<1e-8 and rec['version']=='1.0.1'
     check('mini JSON download',lambda:export_json('#export',mini_record));shot('rubedo-mini.png');page.set_viewport_size({'width':390,'height':844});check('Mini mobile width',no_overflow);page.set_viewport_size({'width':1280,'height':900})
     if not args.in_memory:
         page.goto(f'http://127.0.0.1:{server.server_port}/mini/index.html#mode=takt&cycle=30&demand=700&lang=en')
@@ -55,9 +55,107 @@ with sync_playwright() as p:
         check('scenario transfer result',lambda:expect(page.locator('#result')).to_contain_text('791.52'))
     load('research/index.html');check('sensitivity initial',lambda:expect(page.locator('#sensitivity-result')).to_contain_text('527,68'));check('analytical queue initial',lambda:expect(page.locator('#queue-result')).to_contain_text('Espera média'));page.locator('#arrival').fill('10');page.locator('#service').fill('10');page.locator('#queue-run').click();check('saturation notice',lambda:expect(page.locator('#queue-note')).to_contain_text('não existe regime'));page.locator('#simulacao-run').click();check('simulation results',lambda:expect(page.locator('#simulacao-result')).to_contain_text('Repetição 5'));check('simulation graphic',lambda:expect(page.locator('#simulacao-result svg')).to_have_count(1));page.locator('#otimizacao-run').click();check('optimization result',lambda:expect(page.locator('#otimizacao-result')).to_contain_text('21'));check('optimization graphic',lambda:expect(page.locator('#otimizacao-result svg')).to_have_count(1));page.locator('#otimizacao').scroll_into_view_if_needed();shot('rubedo-research.png')
     def lp_record(rec):assert rec['schema']=='rubedo.optimization.lp2.v1' and rec['best']['objective']==21
-    check('research JSON download',lambda:export_json('#otimizacao-export',lp_record));lang_en();check('research English output',lambda:expect(page.locator('#otimizacao-result')).to_contain_text('Maximum objective'));lang_pt();page.locator('#protocol-sample').click();check('protocol sample',lambda:expect(page.locator('#p-title')).not_to_have_value(''))
+    check('research JSON download',lambda:export_json('#otimizacao-export',lp_record));
+    for field,value in {'lp-va':'1000000','lp-vb':'0','lp-a1':'1000000','lp-b1':'0','lp-limit1':'0.001','lp-a2':'0','lp-b2':'1','lp-limit2':'1'}.items():page.locator('#'+field).fill(value)
+    page.locator('#otimizacao-run').click()
+    check('tiny LP coordinate visible',lambda:expect(page.locator('#otimizacao-result')).to_contain_text('1.00000e-9'))
+    def tiny_lp_record(rec):
+        assert abs(rec['best']['objective']-.001)<1e-12 and abs(rec['best']['x']-1e-9)<1e-18 and len(rec['vertices'])==4
+    check('tiny LP JSON download',lambda:export_json('#otimizacao-export',tiny_lp_record))
+    lang_en();check('research English output',lambda:expect(page.locator('#otimizacao-result')).to_contain_text('Maximum objective'));lang_pt();page.locator('#protocol-sample').click();check('protocol sample',lambda:expect(page.locator('#p-title')).not_to_have_value(''))
     def protocol(rec):assert rec['schema']=='rubedo.research.protocol.v1' and rec['title']
     check('protocol JSON download',lambda:export_json('#protocol-export',protocol));payload={'schema':'rubedo.research.protocol.v1','title':'Restaurado','question':'Q','method':'M'};page.locator('#protocol-file').set_input_files({'name':'sample.json','mimeType':'application/json','buffer':json.dumps(payload).encode()});page.locator('#protocol-import').click();check('protocol import',lambda:expect(page.locator('#p-title')).to_have_value('Restaurado'));page.locator('#protocol-file').set_input_files({'name':'invalid.json','mimeType':'application/json','buffer':b'{"schema":"invalid"}'});page.locator('#protocol-import').click();check('invalid import preserves fields',lambda:expect(page.locator('#protocol-note')).to_contain_text('Campos preservados'));expect(page.locator('#p-title')).to_have_value('Restaurado');page.set_viewport_size({'width':390,'height':844});check('research mobile width',no_overflow)
-    page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');assert not errors,errors;browser.close()
+    page.set_viewport_size({'width':1280,'height':900})
+    check('library twelve protocols',lambda:expect(page.locator('#biblioteca article')).to_have_count(12))
+    for field,value in {'name':'Case A','metric':'objective','unit':'points','value':'1,5','notes':'synthetic','parameters':'x=1; seed N/A','source':'analytic'}.items():page.locator('#st-'+field).fill(value)
+    page.locator('#st-add').click()
+    check('Studio manual record',lambda:expect(page.locator('#st-table tbody tr')).to_have_count(1))
+    page.locator('#st-name').fill('Case B');page.locator('#st-value').fill('2,5');page.locator('#st-add').click()
+    check('Studio baseline delta',lambda:expect(page.locator('#st-table tbody tr').nth(1).locator('td').nth(6)).to_have_text('1'))
+    def studio_record(rec):
+        assert rec['schema']=='rubedo.studio.v2' and len(rec['records'])==2
+        assert rec['records'][0]['origin']=='manual' and rec['records'][0]['modelVersion']=='1.0.1' and rec['records'][0]['createdAt']
+    check('Studio JSON provenance',lambda:export_json('#st-json',studio_record))
+    page.locator('#st-file').set_input_files({'name':'bad.json','mimeType':'application/json','buffer':b'{"schema":"bad"}'});page.locator('#st-import').click()
+    check('Studio invalid import preserves records',lambda:expect(page.locator('#st-status')).to_contain_text('preservados'))
+    expect(page.locator('#st-table tbody tr')).to_have_count(2)
+    legacy={'schema':'rubedo.studio.v1','records':[{'model':'R04','name':'Legacy','metric':'objective','unit':'points','value':1,'notes':''}]}
+    page.locator('#st-file').set_input_files({'name':'legacy.json','mimeType':'application/json','buffer':json.dumps(legacy).encode()})
+    page.once('dialog',lambda d:d.accept());page.locator('#st-import').click()
+    check('Studio legacy restore',lambda:expect(page.locator('#st-table tbody tr')).to_have_count(1))
+    def legacy_record(rec):assert rec['records'][0]['modelVersion']=='unknown' and rec['records'][0]['createdAt'] is None
+    check('Studio legacy provenance',lambda:export_json('#st-json',legacy_record))
+    lang_en();check('Studio English headings',lambda:expect(page.locator('#st-table th').nth(1)).to_have_text('Scenario'));lang_pt()
+    page.locator('#reg-run').click();expect(page.locator('#reg-export')).to_be_enabled()
+    page.locator('#reg-pairs').fill('1;3\n2;5\n3;7')
+    check('regression stale export disabled',lambda:expect(page.locator('#reg-export')).to_be_disabled())
+    page.locator('#rel-run').click();expect(page.locator('#rel-export')).to_be_enabled()
+    page.locator('#rel-time').fill('200');check('reliability stale export disabled',lambda:expect(page.locator('#rel-export')).to_be_disabled())
+    page.set_viewport_size({'width':390,'height':844});check('Studio mobile width',no_overflow)
+    # Stage 04: keyboard, contrast, named controls, reflow, and informative output.
+    def contrast(selector, foreground='color', background='backgroundColor', threshold=4.5):
+        ratio=page.locator(selector).first.evaluate("""(e, props) => {
+          const style=getComputedStyle(e),rgb=s=>s.match(/[0-9.]+/g).slice(0,3).map(Number);
+          const lum=s=>rgb(s).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
+          const a=lum(style[props[0]]),b=lum(style[props[1]]);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+        }""",[foreground,background])
+        assert ratio>=threshold,(selector,ratio,threshold)
+        print('Contrast',selector,round(ratio,2))
+    check('research text contrast',lambda:contrast('#minutes'))
+    check('research control boundary contrast',lambda:contrast('#minutes','borderTopColor','backgroundColor',3))
+    check('research primary contrast',lambda:contrast('#sensitivity-run'))
+    check('research grouped navigation',lambda:expect(page.locator('.nav-group')).to_have_count(3))
+    page.locator('.skip').focus()
+    check('research skip link visible on keyboard focus',lambda:expect(page.locator('.skip')).to_be_in_viewport())
+    page.keyboard.press('Enter')
+    check('research skip target focus',lambda:expect(page.locator('#main')).to_be_focused())
+    page.locator('#precision-run').click()
+    check('precision labelled results',lambda:expect(page.locator('#precision-result')).to_contain_text('Desvio amostral'))
+    lang_en();check('precision English result',lambda:expect(page.locator('#precision-result')).to_contain_text('Sample SD'));lang_pt()
+    page.locator('#precision-values').fill('1 2 3')
+    check('precision stale result cleared',lambda:expect(page.locator('#precision-result')).to_be_empty())
+    page.locator('#mc-run').click()
+    check('Monte Carlo labelled probability',lambda:expect(page.locator('#mc-result')).to_contain_text('Frequência de atingir a meta'))
+    page.locator('#mc-target').fill('110')
+    check('Monte Carlo stale result cleared',lambda:expect(page.locator('#mc-result')).to_be_empty())
+    page.locator('#otimizacao-sample').click()
+    check('chart textual explanation',lambda:expect(page.locator('#otimizacao-result .chart-caption')).to_contain_text('Escalas independentes'))
+    check('Studio table keyboard reachable',lambda:expect(page.locator('#st-table')).to_have_attribute('tabindex','0'))
+    page.set_viewport_size({'width':320,'height':800});check('research 320px reflow',no_overflow)
+    page.emulate_media(reduced_motion='reduce')
+    def assert_reduced_motion():
+        assert page.evaluate("getComputedStyle(document.documentElement).scrollBehavior")=='auto'
+    check('reduced motion respected',assert_reduced_motion)
+    page.set_viewport_size({'width':1280,'height':900})
+    # Explicitly register all eight current model calculations.
+    page.locator('#arrival').fill('6');page.locator('#service').fill('10')
+    page.locator('#precision-values').fill('1 2 3')
+    for p,unit in [('sensitivity',None),('queue',None),('simulacao',None),('otimizacao','value points'),('precision','mm'),('mc','kg'),('reg','kg/h'),('rel',None)]:
+        page.locator('#'+p+'-run').click()
+        expect(page.locator('#'+p+'-studio')).to_be_enabled()
+        if unit:page.locator('#'+p+'-unit').fill(unit)
+        page.locator('#'+p+'-scenario').fill('Transfer '+p)
+        page.locator('#'+p+'-studio').click()
+        check('Studio transfer '+p,lambda p=p:expect(page.locator('#'+p+'-transfer-note')).to_contain_text('Registrado'))
+    def transferred(rec):
+        calculated=[r for r in rec['records'] if r['origin']=='local-calculation']
+        assert len(calculated)==8 and len({r['model'] for r in calculated})==8
+        assert all(r['snapshot']['inputs'] and r['snapshot']['limitations'] and r['modelVersion']=='1.0.1' for r in calculated)
+        assert next(r for r in calculated if r['model']=='R03')['snapshot']['inputs']['seed']==42
+    check('Studio full snapshot export',lambda:export_json('#st-json',transferred))
+    page.locator('#arrival').fill('10');check('queue stale transfer blocked',lambda:expect(page.locator('#queue-studio')).to_be_disabled())
+    page.locator('#queue-run').click();check('unstable queue transfer blocked',lambda:expect(page.locator('#queue-studio')).to_be_disabled())
+    page.set_viewport_size({'width':320,'height':800});check('integrated research 320px reflow',no_overflow)
+    def mini_accessibility():
+        check('Mini tool controls labelled',lambda:expect(page.locator('[data-mode="capacity"]')).to_have_attribute('aria-controls','panel-capacity'))
+        check('Mini text contrast',lambda:contrast('#minutes'))
+        check('Mini control boundary contrast',lambda:contrast('#minutes','borderTopColor','backgroundColor',3))
+        check('Mini selected tool explanation',lambda:expect(page.locator('#tool-guide')).to_contain_text('unidades boas'))
+        page.locator('[data-mode="line"]').focus();page.keyboard.press('Enter')
+        check('Mini keyboard mode switch',lambda:expect(page.locator('[data-mode="line"]')).to_have_attribute('aria-pressed','true'))
+        check('Mini mode explanation updated',lambda:expect(page.locator('#tool-guide')).to_contain_text('estação'))
+        page.locator('[data-mode="capacity"]').click()
+    load('mini/index.html');mini_accessibility();check('Mini 320px reflow',no_overflow)
+    page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');lang_pt();page.locator('[data-mode="capacity"]').click();mini_accessibility();page.set_viewport_size({'width':320,'height':600});check('popup 320px reflow',no_overflow);assert not errors,errors;browser.close()
 if server:server.shutdown()
 print(f'{count} browser interface checks passed ({"in-memory" if args.in_memory else "HTTP"}); no page errors.')

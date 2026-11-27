@@ -1,2 +1,29 @@
 :root{color-scheme:dark;--bg:#1b100f;--panel:#2a1916;--ink:#fff0df;--muted:#d0b6a1;--accent:#f2a263;--gold:#efc578;--line:#654033}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,sans-serif}main{max-width:920px;margin:auto;padding:24px}a{color:var(--gold)}h1{font-size:clamp(26px,4vw,42px);line-height:1.12;margin:7px 0}h2{font-size:19px;margin:0 0 10px}p,small,footer{color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:700;color:var(--gold)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}.buttons,.nav{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;align-items:center}.nav{font-size:13px;gap:14px}button{font:inherit;font-weight:650;background:#40251d;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 13px;cursor:pointer}button[aria-pressed=true],.primary{background:var(--accent);color:#24120c;border-color:var(--accent)}label{display:block;font-weight:600;margin:9px 0 4px}input,textarea{font:inherit;width:100%;background:#1b100f;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px}textarea{min-height:85px;resize:vertical}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:10px}.metric{padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}.metric strong{color:var(--gold);font-variant-numeric:tabular-nums}.popup{min-width:340px;max-width:420px}.popup main{padding:14px}.popup h1{font-size:25px}.popup .panel{padding:12px}.popup button{padding:7px 10px}[hidden]{display:none!important}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}footer{font-size:12px}
 .language{display:flex;gap:6px;justify-content:flex-end}.language button{padding:5px 10px;font-size:13px}button:disabled{opacity:.5;cursor:default}button#export{margin-left:5px}.metric{overflow-wrap:anywhere}.popup .fields{grid-template-columns:1fr 1fr}.popup .metric{font-size:13px}.popup footer{padding-bottom:12px}@media(max-width:360px){.popup .fields{grid-template-columns:1fr}} 
+
+/* Stage 04: shared Mini Lab and popup, with no new permissions or assets. */
+:root{--bg:#211017;--panel:#321b25;--ink:#fff2e9;--muted:#e0c3c6;--line:#76505e;--control:#bd899b;--accent:#ffaf83;--gold:#f2cb84}
+body{overflow-wrap:anywhere}main{min-width:0}header p{margin-top:8px}
+.panel{min-width:0;box-shadow:0 3px 12px #10070b33}
+input,textarea{background:var(--bg);border-color:var(--control);min-width:0}
+button{background:#492432;border-color:var(--control);min-height:44px}
+button[aria-pressed=true],.primary{color:#24120c;background:var(--accent);border-color:var(--accent)}
+button:disabled{opacity:.6}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tool-grid button{text-align:left;white-space:normal;min-width:0;min-height:44px;overflow-wrap:anywhere}
+.tool-grid button[aria-pressed=true]{box-shadow:inset 0 -3px #6d2a38}
+.tool-guide{background:var(--bg);border-left:3px solid #c87994;border-radius:0 8px 8px 0;padding:10px 12px;font-size:14px;margin:12px 0}
+.metric{border-bottom:1px solid var(--line);align-items:baseline;gap:6px}
+.metric strong{font-size:1.06em;overflow-wrap:anywhere}
+#result:not(:empty){padding:0 12px;background:var(--bg);border-radius:9px}
+#note{font-size:14px}
+.popup{min-width:0;width:360px;max-width:100vw}
+.popup .panel{padding:13px}.popup .tool-grid button{font-size:13px}
+.popup .fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+.popup .fields>div{min-width:0}
+.popup button{min-height:44px}
+.language button{min-height:36px}
+.skip{position:absolute;left:-999px;top:8px}
+.skip:focus{left:8px;z-index:3;background:var(--gold);color:var(--bg);padding:10px;border-radius:6px}
+@media(max-width:360px){main{padding:14px}.popup .fields{grid-template-columns:1fr}.panel{padding:13px}.tool-grid button{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

@@ -1,3 +1,11 @@
+## 1.0.1 — 27/11/2026 — aprovação de publicação / release approved
+
+- Exact rational R04 optimization comparisons; scientific boundaries and 257 independent synthetic oracle comparisons.
+- Twelve experiment protocols, versioned Studio and eight explicit model transfers with full inputs/results.
+- Dark wine experience, grouped navigation, keyboard/reflow/contrast checks and bilingual explanations.
+- Local assets, restrictive CSP, bounded JSON import and reproducible extension package.
+- Stage 06 CI passed, including actual isolated Chromium install. Windows Chrome/Edge, updated Defender and manual visual/accessibility acceptance subsequently passed according to the maintainer. [Final acceptance matrix](docs/homologation-1.0.1.md). Maintainer explicitly authorized publication.
+
 ## Mini Edition 1.0.0 — 26/11/2026
 - Mini Lab and Manifest V3 extension version aligned with the experimental 1.0 public edition; four tools preserved.
 - New installation ZIP and SHA-256; browser-native acceptance and latest CI not independently confirmed.

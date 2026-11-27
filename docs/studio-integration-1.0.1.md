@@ -1,0 +1,9 @@
+# Stage 05 — Integrated Research Studio / Integração científica
+Candidate only. Eight computed models R01–R04 and R06–R09 transfer a selected numeric metric after a successful run. R05 retains its separate protocol export/import. Capture is explicit; input edits invalidate the transfer. Each record preserves full input and result snapshot, version, limitations, UTC registration time, declared unit and scenario. Inputs may include user-provided data; do not enter confidential data. No persistence, network or telemetry.
+
+Studio v2 is extended additively with local-calculation and imported-calculation origins. Imported calculations are not authenticated; schema validation checks selected metric/value and metadata, not a cryptographic proof or recomputation. Manual and calculated records are compared separately; comparison uses model, metric, unit, version, and for R07 target frequency/R09 reliability the same target/time respectively. User must ensure all other scientific assumptions and units are comparable. R01 transfer metric is baseline output; full three-scenario output retained. Undefined metrics are excluded. Flexible units must be declared; fixed units cannot be changed. Maximum 100 records and 2 MiB serialized export. No industrial validation.
+
+Test commands: node tests/studio-transfer.test.js, python3 tests/independent_oracles.py, python tests/browser_smoke.py. New commit's results must be confirmed in CI. No public release or package modifications.
+
+## Stage 05 confirmation
+Commit 65dcd784fa5ab5191e2a472d369d45e66c113ce0: [CI 46066955842](https://github.com/Kgasil/rubedo/actions/runs/46066955842) passed 97 HTTP interface checks, 257 independent comparisons, 8 model transfer and 10 additional provenance/guard checks, no page errors. Second workflow 46066961618 also passed.
