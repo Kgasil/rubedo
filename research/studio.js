@@ -4,7 +4,7 @@ const tr=(p,e)=>document.documentElement.lang==='en'?e:p;
 let rows=[],busy=false;
 function status(p,e){$('status').textContent=tr(p,e);}
 function render(){
- const t=document.createElement('table'),head=t.createTHead().insertRow();
+ const t=document.createElement('table');t.createCaption().textContent=tr('Registros: '+rows.length+' / 100','Records: '+rows.length+' / 100');const head=t.createTHead().insertRow();
  for(const label of [tr('Modelo','Model'),tr('Cenário','Scenario'),tr('Métrica','Metric'),tr('Unidade','Unit'),tr('Valor','Value'),tr('Base','Baseline'),'Δ',tr('Versão declarada','Declared version'),tr('Parâmetros','Parameters'),tr('Fonte','Source'),tr('Limitações','Limitations'),tr('Origem','Origin'),'UTC']){
   const th=document.createElement('th');th.scope='col';th.textContent=label;head.append(th);
  }

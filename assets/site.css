@@ -9,3 +9,43 @@
 
 /* Explicit high contrast brand on the dark header, including visited links. */
 .header{background:#21100D;color:#FFF5EB}.header .brand,.header .brand:visited{color:#FFF5EB}.header .brand strong{color:#FFF5EB;font-weight:800}.header .brand small{color:#F2B77D;font-weight:700}.header .brand small:last-child{color:#E8CDB7}
+
+/* Stage 04: research-scoped dark wine surfaces, readable controls, and reflow. */
+body.research-workspace{--bg:#211017;--panel:#321b25;--ink:#fff2e9;--muted:#e0c3c6;--line:#76505e;--control:#bd899b;--gold:#f2cb84;--orange:#ffaf83;--wine:#c87994}
+.research-workspace .header{background:var(--bg)}
+.research-workspace .wrap{min-width:0}
+.research-workspace .section{padding:clamp(28px,5vw,58px) 0;scroll-margin-top:12px}
+.research-workspace .section .wrap{max-width:1080px}
+.research-workspace h1{font-size:clamp(32px,5vw,60px);overflow-wrap:anywhere}
+.research-workspace .card{min-width:0;padding:clamp(14px,3vw,26px)}
+.research-workspace .header .wrap{align-items:center}
+.research-workspace .local{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;order:3}
+.research-workspace .nav-group{min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px}
+.research-workspace .nav-group strong{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+.research-workspace .nav-links{display:flex;flex-wrap:wrap;gap:6px}
+.research-workspace .local .btn{font-size:13px;min-height:36px;display:inline-flex;align-items:center;padding:5px 9px;overflow-wrap:anywhere}
+.research-workspace .fields{grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:14px}
+.research-workspace :is(input,textarea,select){max-width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--control);border-radius:8px;padding:10px 12px;font:inherit}
+.research-workspace :is(button,.btn){border-color:var(--control);min-height:44px}
+.research-workspace :is(.primary,button[aria-pressed=true]){border-color:var(--gold)}
+.research-workspace :is(button,.btn):hover:not(:disabled){box-shadow:inset 0 0 0 1px var(--gold)}
+.research-workspace a:not(.btn):not(.brand){text-underline-offset:3px}
+.research-workspace .card a:not(.btn){text-decoration:underline}
+.research-workspace .model-guide{margin:14px 0 20px;border-left:3px solid var(--wine);padding:8px 14px;background:var(--panel);color:var(--ink);border-radius:0 8px 8px 0;max-width:76ch}
+.research-workspace .model-guide summary{cursor:pointer;font-weight:700;padding:5px 0}
+.research-workspace .model-guide p{margin:8px 0;font-size:14px}
+.research-workspace .table-scroll{max-width:100%;min-width:0}
+.research-workspace .table-scroll:focus-visible{outline-offset:-3px}
+.research-workspace table{background:var(--bg);border-radius:8px}
+.research-workspace caption{text-align:left;font-weight:700;color:var(--muted);padding:8px 0}
+.research-workspace th{background:var(--panel)}
+.research-workspace tbody tr:nth-child(even){background:#2a1620}
+.research-workspace #st-table table{min-width:1040px;table-layout:auto}
+.research-workspace #st-table td{min-width:70px;max-width:240px;overflow-wrap:anywhere}
+.research-workspace pre{background:var(--bg);padding:16px;border:1px solid var(--line);border-radius:10px;font:inherit;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;white-space:pre-wrap}
+.research-workspace pre:empty{display:none}
+.research-workspace .model-chart{background:var(--bg);border-color:var(--control);max-width:720px}
+.research-workspace .chart-caption{font-size:14px;text-align:center;margin:0 auto 18px}
+.research-workspace :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:760px){.research-workspace .local{grid-template-columns:1fr}.research-workspace .nav-group{padding:8px}.research-workspace .actions{gap:8px}.research-workspace .wrap{padding-inline:14px}}
+@media(prefers-reduced-motion:reduce){.research-workspace *, .research-workspace *::before,.research-workspace *::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

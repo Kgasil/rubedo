@@ -154,3 +154,7 @@ O catálogo é a referência institucional para o estado atual; registros histó
 ### Etapa 03 / Stage 03 — candidate research reproducibility
 
 Candidate library: 12 synthetic protocols; Studio v2 adds declared source, parameters/seed, model version, UTC record timestamp and local JSON restoration, including explicit legacy migration. Comparisons require matching model, metric, unit and declared version. Imported/manual data are not independently authenticated. Python standard-library oracles run in CI; see [research reproducibility](docs/reproducibility-1.0.1.md). Public release remains 1.0.0 until approval.
+
+### Etapa 04 / Stage 04 — accessible research experience (candidate)
+
+Research navigation grouped by purpose, dark wine surfaces, higher-contrast controls, keyboard skip links, model interpretation guides, chart explanations, bilingual human-readable results and 320px reflow checks. Mini Lab and popup share the same visual treatment. Targeted automated checks are not a full WCAG conformance audit. See [accessibility evidence](docs/accessibility-1.0.1.md). Public release unchanged.

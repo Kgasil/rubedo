@@ -10,3 +10,6 @@ Manual records include declared model version, parameters/seed, source, limitati
  
 ## Limits
 Synthetic examples only, no industrial calibration, no claims of certified research. Browser, actual extension install, visual review and global 9/10 approval remain gates. Public ZIPs unchanged. No changes to logos, themes or free distribution.
+
+## Stage 03 confirmation
+Commit 80728b1f3a891af013d2ece0412c059523f6f32c: [CI 46066440969](https://github.com/Kgasil/rubedo/actions/runs/46066440969), both jobs successful; 257 independent comparisons, 8 Studio core checks, 56 browser checks with no page errors. This is Stage 03 evidence, not Stage 04 acceptance.

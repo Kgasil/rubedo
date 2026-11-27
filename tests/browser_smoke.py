@@ -92,6 +92,50 @@ with sync_playwright() as p:
     page.locator('#rel-run').click();expect(page.locator('#rel-export')).to_be_enabled()
     page.locator('#rel-time').fill('200');check('reliability stale export disabled',lambda:expect(page.locator('#rel-export')).to_be_disabled())
     page.set_viewport_size({'width':390,'height':844});check('Studio mobile width',no_overflow)
-    page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');assert not errors,errors;browser.close()
+    # Stage 04: keyboard, contrast, named controls, reflow, and informative output.
+    def contrast(selector, foreground='color', background='backgroundColor', threshold=4.5):
+        ratio=page.locator(selector).first.evaluate("""(e, props) => {
+          const style=getComputedStyle(e),rgb=s=>s.match(/[0-9.]+/g).slice(0,3).map(Number);
+          const lum=s=>rgb(s).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
+          const a=lum(style[props[0]]),b=lum(style[props[1]]);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+        }""",[foreground,background])
+        assert ratio>=threshold,(selector,ratio,threshold)
+        print('Contrast',selector,round(ratio,2))
+    check('research text contrast',lambda:contrast('#minutes'))
+    check('research control boundary contrast',lambda:contrast('#minutes','borderTopColor','backgroundColor',3))
+    check('research primary contrast',lambda:contrast('#sensitivity-run'))
+    check('research grouped navigation',lambda:expect(page.locator('.nav-group')).to_have_count(3))
+    page.locator('.skip').focus()
+    check('research skip link visible on keyboard focus',lambda:expect(page.locator('.skip')).to_be_in_viewport())
+    page.keyboard.press('Enter')
+    check('research skip target focus',lambda:expect(page.locator('#main')).to_be_focused())
+    page.locator('#precision-run').click()
+    check('precision labelled results',lambda:expect(page.locator('#precision-result')).to_contain_text('Desvio amostral'))
+    lang_en();check('precision English result',lambda:expect(page.locator('#precision-result')).to_contain_text('Sample SD'));lang_pt()
+    page.locator('#precision-values').fill('1 2 3')
+    check('precision stale result cleared',lambda:expect(page.locator('#precision-result')).to_be_empty())
+    page.locator('#mc-run').click()
+    check('Monte Carlo labelled probability',lambda:expect(page.locator('#mc-result')).to_contain_text('Frequência de atingir a meta'))
+    page.locator('#mc-target').fill('110')
+    check('Monte Carlo stale result cleared',lambda:expect(page.locator('#mc-result')).to_be_empty())
+    page.locator('#otimizacao-sample').click()
+    check('chart textual explanation',lambda:expect(page.locator('#otimizacao-result .chart-caption')).to_contain_text('Escalas independentes'))
+    check('Studio table keyboard reachable',lambda:expect(page.locator('#st-table')).to_have_attribute('tabindex','0'))
+    page.set_viewport_size({'width':320,'height':800});check('research 320px reflow',no_overflow)
+    page.emulate_media(reduced_motion='reduce')
+    def assert_reduced_motion():
+        assert page.evaluate("getComputedStyle(document.documentElement).scrollBehavior")=='auto'
+    check('reduced motion respected',assert_reduced_motion)
+    def mini_accessibility():
+        check('Mini tool controls labelled',lambda:expect(page.locator('[data-mode="capacity"]')).to_have_attribute('aria-controls','panel-capacity'))
+        check('Mini text contrast',lambda:contrast('#minutes'))
+        check('Mini control boundary contrast',lambda:contrast('#minutes','borderTopColor','backgroundColor',3))
+        check('Mini selected tool explanation',lambda:expect(page.locator('#tool-guide')).to_contain_text('unidades boas'))
+        page.locator('[data-mode="line"]').focus();page.keyboard.press('Enter')
+        check('Mini keyboard mode switch',lambda:expect(page.locator('[data-mode="line"]')).to_have_attribute('aria-pressed','true'))
+        check('Mini mode explanation updated',lambda:expect(page.locator('#tool-guide')).to_contain_text('estação'))
+        page.locator('[data-mode="capacity"]').click()
+    load('mini/index.html');mini_accessibility();check('Mini 320px reflow',no_overflow)
+    page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');lang_pt();page.locator('[data-mode="capacity"]').click();mini_accessibility();page.set_viewport_size({'width':320,'height':600});check('popup 320px reflow',no_overflow);assert not errors,errors;browser.close()
 if server:server.shutdown()
 print(f'{count} browser interface checks passed ({"in-memory" if args.in_memory else "HTTP"}); no page errors.')
