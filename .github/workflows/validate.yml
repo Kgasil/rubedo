@@ -20,6 +20,8 @@ jobs:
       - run: python3 tests/verify_mini_package.py
       - run: node tests/monte.test.js && node tests/precision.test.js && node tests/statistics.test.js
       - run: node tests/scientific-boundaries.test.js
+      - run: node tests/studio.test.js
+      - run: python3 tests/independent_oracles.py
   browser:
     runs-on: ubuntu-24.04
     steps:

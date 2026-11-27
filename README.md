@@ -64,7 +64,7 @@ R06 e R07 são adições experimentais ao Workspace; testes da versão pública 
 
 ## Experiment Library & Research Studio
 
-[8 protocolos / 8 protocols](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
+[Biblioteca / Library](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
 
 ## Mini Edition — 1.0.0
 
@@ -150,3 +150,7 @@ Branch de desenvolvimento, não publicada / Unreleased development branch. R04 u
 
 O catálogo é a referência institucional para o estado atual; registros históricos e avisos específicos deste repositório permanecem aplicáveis. Em caso de divergência, prevalece o estado mais restritivo. / The catalog is the institutional reference for current status; this repository's historical records and specific notices remain applicable. If records disagree, the most restrictive state prevails.
 <!-- graal-governance-v1:end -->
+
+### Etapa 03 / Stage 03 — candidate research reproducibility
+
+Candidate library: 12 synthetic protocols; Studio v2 adds declared source, parameters/seed, model version, UTC record timestamp and local JSON restoration, including explicit legacy migration. Comparisons require matching model, metric, unit and declared version. Imported/manual data are not independently authenticated. Python standard-library oracles run in CI; see [research reproducibility](docs/reproducibility-1.0.1.md). Public release remains 1.0.0 until approval.

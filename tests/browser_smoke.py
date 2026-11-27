@@ -65,6 +65,33 @@ with sync_playwright() as p:
     lang_en();check('research English output',lambda:expect(page.locator('#otimizacao-result')).to_contain_text('Maximum objective'));lang_pt();page.locator('#protocol-sample').click();check('protocol sample',lambda:expect(page.locator('#p-title')).not_to_have_value(''))
     def protocol(rec):assert rec['schema']=='rubedo.research.protocol.v1' and rec['title']
     check('protocol JSON download',lambda:export_json('#protocol-export',protocol));payload={'schema':'rubedo.research.protocol.v1','title':'Restaurado','question':'Q','method':'M'};page.locator('#protocol-file').set_input_files({'name':'sample.json','mimeType':'application/json','buffer':json.dumps(payload).encode()});page.locator('#protocol-import').click();check('protocol import',lambda:expect(page.locator('#p-title')).to_have_value('Restaurado'));page.locator('#protocol-file').set_input_files({'name':'invalid.json','mimeType':'application/json','buffer':b'{"schema":"invalid"}'});page.locator('#protocol-import').click();check('invalid import preserves fields',lambda:expect(page.locator('#protocol-note')).to_contain_text('Campos preservados'));expect(page.locator('#p-title')).to_have_value('Restaurado');page.set_viewport_size({'width':390,'height':844});check('research mobile width',no_overflow)
+    page.set_viewport_size({'width':1280,'height':900})
+    check('library twelve protocols',lambda:expect(page.locator('#biblioteca article')).to_have_count(12))
+    for field,value in {'name':'Case A','metric':'objective','unit':'points','value':'1,5','notes':'synthetic','parameters':'x=1; seed N/A','source':'analytic'}.items():page.locator('#st-'+field).fill(value)
+    page.locator('#st-add').click()
+    check('Studio manual record',lambda:expect(page.locator('#st-table tbody tr')).to_have_count(1))
+    page.locator('#st-name').fill('Case B');page.locator('#st-value').fill('2,5');page.locator('#st-add').click()
+    check('Studio baseline delta',lambda:expect(page.locator('#st-table tbody tr').nth(1).locator('td').nth(6)).to_have_text('1'))
+    def studio_record(rec):
+        assert rec['schema']=='rubedo.studio.v2' and len(rec['records'])==2
+        assert rec['records'][0]['origin']=='manual' and rec['records'][0]['modelVersion']=='1.0.1' and rec['records'][0]['createdAt']
+    check('Studio JSON provenance',lambda:export_json('#st-json',studio_record))
+    page.locator('#st-file').set_input_files({'name':'bad.json','mimeType':'application/json','buffer':b'{"schema":"bad"}'});page.locator('#st-import').click()
+    check('Studio invalid import preserves records',lambda:expect(page.locator('#st-status')).to_contain_text('preservados'))
+    expect(page.locator('#st-table tbody tr')).to_have_count(2)
+    legacy={'schema':'rubedo.studio.v1','records':[{'model':'R04','name':'Legacy','metric':'objective','unit':'points','value':1,'notes':''}]}
+    page.locator('#st-file').set_input_files({'name':'legacy.json','mimeType':'application/json','buffer':json.dumps(legacy).encode()})
+    page.once('dialog',lambda d:d.accept());page.locator('#st-import').click()
+    check('Studio legacy restore',lambda:expect(page.locator('#st-table tbody tr')).to_have_count(1))
+    def legacy_record(rec):assert rec['records'][0]['modelVersion']=='unknown' and rec['records'][0]['createdAt'] is None
+    check('Studio legacy provenance',lambda:export_json('#st-json',legacy_record))
+    lang_en();check('Studio English headings',lambda:expect(page.locator('#st-table th').nth(1)).to_have_text('Scenario'));lang_pt()
+    page.locator('#reg-run').click();expect(page.locator('#reg-export')).to_be_enabled()
+    page.locator('#reg-pairs').fill('1;3\n2;5\n3;7')
+    check('regression stale export disabled',lambda:expect(page.locator('#reg-export')).to_be_disabled())
+    page.locator('#rel-run').click();expect(page.locator('#rel-export')).to_be_enabled()
+    page.locator('#rel-time').fill('200');check('reliability stale export disabled',lambda:expect(page.locator('#rel-export')).to_be_disabled())
+    page.set_viewport_size({'width':390,'height':844});check('Studio mobile width',no_overflow)
     page.set_viewport_size({'width':360,'height':600});load('extension/popup.html');check('popup 4 tools',lambda:expect(page.locator('[data-mode]')).to_have_count(4));page.locator('#run').click();check('popup capacity',lambda:expect(page.locator('#result')).to_contain_text('527,68'));page.locator('[data-mode="takt"]').click();page.locator('#sample').click();check('popup takt',lambda:expect(page.locator('#result')).to_contain_text('Não atende'));lang_en();check('popup English',lambda:expect(page.locator('#result')).to_contain_text('Does not meet'));check('popup width',no_overflow);shot('rubedo-popup.png');assert not errors,errors;browser.close()
 if server:server.shutdown()
 print(f'{count} browser interface checks passed ({"in-memory" if args.in_memory else "HTTP"}); no page errors.')

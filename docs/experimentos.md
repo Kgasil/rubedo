@@ -25,3 +25,12 @@ Pergunta: qual combinação contínua de dois produtos maximiza um valor sintét
 ## Registros de referência
 
 [Resultados JSON](../examples/reference-results.json) gerados por `node scripts/reference_results.js`. Verificar sem reescrever: `node scripts/reference_results.js --check`. São cinco casos sintéticos, não resultados experimentais observados. Preserve as sementes e entradas ao compartilhar registros com outras frentes, sempre mediante autorização.
+
+## Biblioteca candidata 1.0.1 — quatro protocolos adicionais / Four additional synthetic protocols
+
+- R02-B: 9 arrivals/hour, 10 services/hour. Analytical Wq=54 min; near saturation is sensitive to assumptions.
+- R04-B: maximize 1000000*x, constraints 1000000*x≤0.001 and y≤1. x=1e-9, objective=0.001, multiple optimal y values. Continuous quantities only.
+- R06-B: observations 999999999999 and 1000000000000. Mean 999999999999.5, sample SD=sqrt(0.5), SE=0.5. Not a metrological uncertainty assessment.
+- R09-B: rates 0 and 0.01/hour, 100 hours. Series exp(-1), parallel 1 under idealized independence. Zero modeled hazard is an assumption, not evidence of immortality.
+
+Studio v2: enter parameters/seed, declared version, source, metric/unit, value and limitations. Export JSON to reproduce the record. UTC time records the entry, not experiment execution. Old v1 records restore with unknown version and null time; no automatic authenticity claim. Manual/legacy records are not proof of model accuracy.
