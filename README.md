@@ -115,7 +115,9 @@ Para reconstruir o ZIP e seu hash após uma alteração intencional da extensão
 
 ## Ecossistema GRAAL / GRAAL ecosystem
 
-<p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg?v=20261126-2" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
+**Aprender · Construir · Proteger · Simplificar · Evoluir / Learn · Build · Protect · Simplify · Evolve**
+
+<p align="center"><a href="https://kgasil.github.io/"><img src="https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/brand-banner.svg?v=20261127-graal" alt="K&amp;G Vision — GRAAL" width="420"></a></p>
 
 O escudo institucional mantém o topo roxo e rosa, o núcleo branco e a ponta inferior laranja do Rubedo. / The institutional shield preserves the purple and pink top, white core and Rubedo’s orange lower tip.
 
@@ -125,8 +127,8 @@ O escudo institucional mantém o topo roxo e rosa, o núcleo branco e a ponta in
 | --- | --- | --- |
 | K&G Vision | Coordenação e direção / Coordination | [Portal](https://kgasil.github.io/) |
 | Genesis | Sabedoria e Aplicação / Learn | [Site](https://kgasil.github.io/genesis/) |
-| Rubedo | Ciência e Inovação / Discover | [Site](https://kgasil.github.io/rubedo/) |
-| Argus | Segurança e Desenvolvimento / Build | [Site](https://kgasil.github.io/argus/) |
+| Rubedo | Ciência e Inovação / Build | [Site](https://kgasil.github.io/rubedo/) |
+| Argus | Segurança e Desenvolvimento / Protect | [Site](https://kgasil.github.io/argus/) |
 | Aeris | Eficiência e Simplicidade / Simplify | [Site](https://kgasil.github.io/aeris/) · [Desktop 1.1.0 RC1 — prévia experimental](https://kgasil.github.io/aeris/#instalacao) · [Extension 1.0.0](https://kgasil.github.io/aeris/extension-preview.html) |
 | Lilium | Estratégia e Evolução / Evolve | [Site](https://kgasil.github.io/lilium/) |
 
