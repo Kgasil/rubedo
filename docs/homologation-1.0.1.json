@@ -70,8 +70,10 @@
       "status": "pass",
       "criterion": "Windows Chrome and Edge / Chrome e Edge no Windows",
       "acceptance": "both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence",
-      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
-      "evidence_type": "maintainer_report"
+      "evidence": "Maintainer-reported group acceptance, 2026-11-27; Chrome and Edge on Windows reported passed for 1.0.1. Individual clean profile, exact hash check, clipboard/export, reload and uninstall observations not supplied. No independent rerun.",
+      "evidence_type": "maintainer_report",
+      "observed_scope": "reported_group_only",
+      "individual_case_evidence": "NOT_ESTABLISHED"
     },
     {
       "id": "AV",
@@ -79,8 +81,10 @@
       "status": "pass",
       "criterion": "Updated malware scan / Antivírus atualizado",
       "acceptance": "Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections",
-      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
-      "evidence_type": "maintainer_report"
+      "evidence": "Maintainer-reported group acceptance, 2026-11-27; Updated Defender reported no detections for 1.0.1. Raw logs, engine/definition versions, scan time and per-target results not supplied. No independent rerun.",
+      "evidence_type": "maintainer_report",
+      "observed_scope": "reported_group_only",
+      "individual_case_evidence": "NOT_ESTABLISHED"
     },
     {
       "id": "MANUAL",
@@ -88,11 +92,14 @@
       "status": "pass",
       "criterion": "Manual visual and accessibility review / Revisão visual e acessibilidade manual",
       "acceptance": "review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues",
-      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
-      "evidence_type": "maintainer_report"
+      "evidence": "Maintainer-reported group acceptance, 2026-11-27; Visual, keyboard and accessibility review reported passed for 1.0.1. Individual viewport, popup and screen-reader results not supplied. No independent rerun.",
+      "evidence_type": "maintainer_report",
+      "observed_scope": "reported_group_only",
+      "individual_case_evidence": "NOT_ESTABLISHED"
     }
   ],
   "score": 10,
   "independently_logged_score": 7,
-  "release_authorized": true
+  "release_authorized": true,
+  "score_scope": "Historical internal candidate acceptance: 7 points from CI/source review and 3 from maintainer-reported groups; not institutional evidence maturity, independent certification, or proof every listed manual subcase was executed. Release authorization is historical and applies only to the tested candidate."
 }
