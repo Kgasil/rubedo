@@ -1,0 +1,92 @@
+{
+  "schema": "rubedo.homologation.v1",
+  "candidate": "1.0.1",
+  "tested_runtime_commit": "166763ff57b920f18d947fe365311cb01f10d1f4",
+  "base": "f2193e4bed955bd1290f822c5538435c0b59cdb2",
+  "sha256": "a2fd6017a4f5a3813b924b0d249f91090f57857054ff565b80dc633d5eb95424",
+  "minimum_score": 9,
+  "all_criteria_required": true,
+  "maintainer_approval": false,
+  "criteria": [
+    {
+      "id": "SCI",
+      "weight": 2,
+      "status": "pass",
+      "criterion": "Scientific precision / Precisão científica",
+      "acceptance": "257 independent oracle comparisons, 19 boundary groups, 84 existing rules and 5 reference cases pass",
+      "evidence": "run 46067486777 job 140736211266"
+    },
+    {
+      "id": "REP",
+      "weight": 1,
+      "status": "pass",
+      "criterion": "Reproducibility and Studio / Reprodutibilidade e Studio",
+      "acceptance": "8 Studio checks, 8 transfers and 10 provenance/guard checks; snapshots and seeded cases",
+      "evidence": "run 46067486777 jobs 140736211266 and 140736211958"
+    },
+    {
+      "id": "UX",
+      "weight": 1,
+      "status": "pass",
+      "criterion": "Automated usability and accessibility / Usabilidade e acessibilidade automatizadas",
+      "acceptance": "97 browser checks, no page errors; selected contrast ≥4.5:1 text and ≥3:1 controls, keyboard, 320px and reduced motion",
+      "evidence": "run 46067486777 job 140736211958"
+    },
+    {
+      "id": "PRIV",
+      "weight": 1,
+      "status": "pass",
+      "criterion": "Privacy and security controls / Privacidade e controles",
+      "acceptance": "12 boundary checks; local subresources, blocked fetch and text-only import; no declared extension permissions",
+      "evidence": "run 46067486777 both jobs"
+    },
+    {
+      "id": "ZIP",
+      "weight": 1,
+      "status": "pass",
+      "criterion": "Package integrity / Integridade",
+      "acceptance": "two reproducible builds, source parity, CRC, fixed historical hashes and same installed ZIP hash",
+      "evidence": "run 46067486777 both jobs"
+    },
+    {
+      "id": "CHROMIUM",
+      "weight": 0.5,
+      "status": "pass",
+      "criterion": "Isolated Chromium install / Instalação Chromium",
+      "acceptance": "actual unpacked extension registered, four tools and JSON export",
+      "evidence": "run 46067486777 job 140736211958"
+    },
+    {
+      "id": "IDENTITY",
+      "weight": 0.5,
+      "status": "pass",
+      "criterion": "Identity and free distribution / Identidade e gratuidade",
+      "acceptance": "official symbol and icon assets and historical downloads unchanged in diff; dark wine UI, no payment/account requirement",
+      "evidence": "compare f2193e4bed955bd1290f822c5538435c0b59cdb2...166763ff57b920f18d947fe365311cb01f10d1f4; source review"
+    },
+    {
+      "id": "WIN",
+      "weight": 1,
+      "status": "pending",
+      "criterion": "Windows Chrome and Edge / Chrome e Edge no Windows",
+      "acceptance": "both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence",
+      "evidence": null
+    },
+    {
+      "id": "AV",
+      "weight": 1,
+      "status": "pending",
+      "criterion": "Updated malware scan / Antivírus atualizado",
+      "acceptance": "Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections",
+      "evidence": null
+    },
+    {
+      "id": "MANUAL",
+      "weight": 1,
+      "status": "pending",
+      "criterion": "Manual visual and accessibility review / Revisão visual e acessibilidade manual",
+      "acceptance": "review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues",
+      "evidence": null
+    }
+  ]
+}

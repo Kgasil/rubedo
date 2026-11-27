@@ -25,3 +25,5 @@ Manifest V3 sem permissões declaradas, scripts de conteúdo, background, conta,
 ### Candidate installation / Instalação do candidato
 
 Authorized isolated evaluation only. Build into an empty staging directory using `python3 scripts/package_extension.py --output-dir /path/to/empty-stage`. Compare SHA-256 with the candidate CI log and scan the exact ZIP with updated protection before extracting. Use a clean Chrome/Edge profile and Load unpacked only if permitted; never disable security controls. Verify all four tools, local JSON export, language switching and removal. No store listing or paid feature. See [candidate gates](../docs/security-candidate-1.0.1.md).
+
+**Acceptance update:** isolated bundled Chromium install succeeded in CI 46067486777 with the exact candidate ZIP hash. This is not branded Chrome/Edge Windows acceptance or antivirus approval. [Manual evidence instructions](../docs/windows-acceptance-1.0.1.md).

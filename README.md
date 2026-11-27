@@ -166,3 +166,7 @@ Eight research models can explicitly register a chosen numeric metric with its c
 ### Etapa 06 / Stage 06 — security and distribution candidate
 
 Local assets, restrictive content policies, bounded file imports and isolated unpacked Chromium installation tests. No release, public ZIP replacement or store submission. See [security and release gates](docs/security-candidate-1.0.1.md). Branded Chrome/Edge on Windows and updated antivirus validation remain mandatory before release.
+
+### Etapa 07 / Stage 07 — homologação final bloqueada / final acceptance blocked
+
+[Evidence matrix / Matriz de evidências](docs/homologation-1.0.1.md): 7.0/10 confirmed against explicit criteria, 9.0/10 minimum plus all mandatory gates. Stage 06 CI passed including actual isolated Chromium installation; branded Chrome/Edge on Windows, updated Defender and manual visual/accessibility acceptance remain pending. [Windows instructions](docs/windows-acceptance-1.0.1.md). Public ZIP remains 1.0.0; do not merge or release without explicit approval after all gates pass.
