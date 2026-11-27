@@ -95,7 +95,7 @@ Extraia o pacote completo. Na raiz, execute `python -m http.server 8000 --bind 1
 
 Rubedo is an applied research and computational engineering initiative within K&G Vision, focused on mathematical modeling, operations research, scenario analysis and reproducible experiments. The Research Workspace includes capacity sensitivity, an analytical M/M/1 queue, seeded stochastic queue simulation, a continuous two-variable linear program and a local JSON research notebook. The Mini Lab offers four tools and the extension four. All are exploratory prototypes, not validated industrial decisions, commercial services or accredited research. See [model assumptions](docs/modelos.md) and [experiment protocols](docs/experimentos.md).
 
-**Manual extension installation:** Extract the installation ZIP. On desktop Chrome or Edge, open the extensions page, enable Developer mode where permitted, select Load unpacked, and choose the extracted folder containing manifest.json. Reload to update; Remove to uninstall. Manual acceptance in the actual extension environment is pending.
+**Manual extension installation:** Extract the installation ZIP. On desktop Chrome or Edge, open the extensions page, enable Developer mode where permitted, select Load unpacked, and choose the extracted folder containing manifest.json. Reload to update; Remove to uninstall. Windows Chrome/Edge manual acceptance for the exact 1.0.1 candidate was reported as passed by the maintainer on 27 November 2026; independent manual logs and screenshots were not supplied. See the evidence matrix below. Not published in browser stores.
 
 ## Desenvolvimento e validação / Development and validation
 
