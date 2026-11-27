@@ -15,9 +15,9 @@ Weights chosen for this acceptance review; not external certification. Binary po
 | Package integrity / Integridade | 1 | PASS — two reproducible builds, source parity, CRC, fixed historical hashes and same installed ZIP hash |
 | Isolated Chromium install / Instalação Chromium | 0.5 | PASS — actual unpacked extension registered, four tools and JSON export |
 | Identity and free distribution / Identidade e gratuidade | 0.5 | PASS — official symbol and icon assets and historical downloads unchanged in diff; dark wine UI, no payment/account requirement |
-| Windows Chrome and Edge / Chrome e Edge no Windows | 1 | PASS (maintainer report) — both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence |
-| Updated malware scan / Antivírus atualizado | 1 | PASS (maintainer report) — Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections |
-| Manual visual and accessibility review / Revisão visual e acessibilidade manual | 1 | PASS (maintainer report) — review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues |
+| Windows Chrome and Edge / Chrome e Edge no Windows | 1 | PASS (maintainer report) — Chrome/Edge on Windows reported passed for the 1.0.1 candidate; individual profile, clipboard/export, reload and uninstall observations not supplied |
+| Updated malware scan / Antivírus atualizado | 1 | PASS (maintainer report) — updated Defender reported no detections for the candidate; raw logs, engine, definition version, timestamp and per-target results not supplied |
+| Manual visual and accessibility review / Revisão visual e acessibilidade manual | 1 | PASS (maintainer report) — visual/keyboard/accessibility review reported passed; individual viewport and screen-reader records not supplied |
  
 Total internal acceptance: 10.0/10; 7.0 points backed by CI/source review, 3.0 points by maintainer report. [Machine-readable matrix](homologation-1.0.1.json). Publication authorized. Any runtime modification invalidates affected evidence; rebuild, compare hash and repeat required tests. No unresolved critical/high regression permitted.
  
