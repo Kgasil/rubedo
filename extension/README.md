@@ -21,3 +21,7 @@ Manifest V3 sem permissões declaradas, scripts de conteúdo, background, conta,
 [Site e tutorial](https://kgasil.github.io/rubedo/#instalar) · [Download ZIP](https://github.com/Kgasil/rubedo/raw/refs/heads/main/downloads/Rubedo-Mini-v1.0.0-install.zip). A versão 1.0.0 inclui gargalos, perdas de disponibilidade e qualidade e cobertura da demanda.
 
 **Candidato / Candidate 1.0.1:** a fonte nesta branch e os JSONs exportados identificam 1.0.1. O ZIP público 1.0.0 continua intacto. Candidate packaging is staging-only; no new release or store submission.
+
+### Candidate installation / Instalação do candidato
+
+Authorized isolated evaluation only. Build into an empty staging directory using `python3 scripts/package_extension.py --output-dir /path/to/empty-stage`. Compare SHA-256 with the candidate CI log and scan the exact ZIP with updated protection before extracting. Use a clean Chrome/Edge profile and Load unpacked only if permitted; never disable security controls. Verify all four tools, local JSON export, language switching and removal. No store listing or paid feature. See [candidate gates](../docs/security-candidate-1.0.1.md).

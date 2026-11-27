@@ -13,7 +13,9 @@ if output == (ROOT/'downloads').resolve() or (ROOT/'downloads').resolve() in out
 archive=output/f'Rubedo-Mini-v{version}-install.zip'
 archive.parent.mkdir(exist_ok=True)
 files=sorted(['core.js','manifest.json','popup.html','style.css','ui.js']+list(json.loads((ROOT/'extension/manifest.json').read_text())['icons'].values()))
-with ZipFile(archive,'w',compression=ZIP_STORED) as z:
+if archive.exists() or (output/'SHA256SUMS.txt').exists():
+    parser.error('Use an empty staging directory; existing artifacts will not be overwritten.')
+with ZipFile(archive,'x',compression=ZIP_STORED) as z:
     for name in files:
         info=ZipInfo(name,date_time=(2026,1,1,0,0,0));info.compress_type=ZIP_STORED;info.external_attr=0o100644<<16
         z.writestr(info,(ROOT/'extension'/name).read_bytes(),compress_type=ZIP_STORED)

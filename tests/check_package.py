@@ -30,6 +30,8 @@ for p,h in htmls.items():
 manifest=json.loads((ROOT/'extension/manifest.json').read_text())
 assert manifest['manifest_version']==3 and manifest['version']=='1.0.1'
 assert not any(manifest.get(k) for k in ('permissions','host_permissions','content_scripts','background'))
+assert set(manifest)=={'manifest_version','name','version','description','action','icons','content_security_policy'}
+assert "connect-src 'none'" in manifest['content_security_policy']['extension_pages']
 expected={'manifest.json','popup.html','core.js','ui.js','style.css'} | set(manifest['icons'].values())
 # Test candidate ZIP reproducibility without touching public downloads.
 with tempfile.TemporaryDirectory() as d1, tempfile.TemporaryDirectory() as d2:

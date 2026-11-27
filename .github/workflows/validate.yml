@@ -22,6 +22,7 @@ jobs:
       - run: node tests/scientific-boundaries.test.js
       - run: node tests/studio.test.js && node tests/studio-transfer.test.js
       - run: python3 tests/independent_oracles.py
+      - run: node tests/security.test.js
   browser:
     runs-on: ubuntu-24.04
     steps:
@@ -32,3 +33,4 @@ jobs:
       - run: pip install playwright==1.57.0
       - run: python -m playwright install --with-deps chromium
       - run: python tests/browser_smoke.py
+      - run: python tests/privacy_browser.py

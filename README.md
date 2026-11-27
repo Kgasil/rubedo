@@ -20,7 +20,7 @@
 
 ## Research Workspace 1.0 — 26/11/2026
 
-Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. Baseline automated regression passed at eaa1dd5770; see the linked validation run. Candidate 1.0.1 remains unapproved. Not validated for industrial decisions or certified research.
+Lançamento público experimental aprovado pelo idealizador após testes manuais relatados. Oito modelos científicos (R01–R04, R06–R09), caderno R05, biblioteca de oito experimentos e Research Studio com exportação JSON/TXT. / Experimental public release approved by the maintainer following reported manual testing. Eight scientific models, research notebook, eight experiment protocols and results studio. Mini Lab and Mini Extension are now 1.0.0; manual installation only. At the initial release, independent automated regression results were not confirmed. Subsequent first-party CI ([run 46007461543](https://github.com/Kgasil/rubedo/actions/runs/46007461543)) passed package, rule and browser checks; this was not independent scientific validation. Candidate 1.0.1 includes independent synthetic reference implementations, not external certification, and remains unapproved. Not validated for industrial decisions or certified research.
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
@@ -162,3 +162,7 @@ Research navigation grouped by purpose, dark wine surfaces, higher-contrast cont
 ### Etapa 05 / Stage 05 — Integrated Research Studio
 
 Eight research models can explicitly register a chosen numeric metric with its complete input/result snapshot, model version and limitations. R05 remains the separate research protocol notebook. Calculated records restored from files are labelled imported/unverified; no automatic storage or networking. See [integration notes](docs/studio-integration-1.0.1.md). Candidate only.
+
+### Etapa 06 / Stage 06 — security and distribution candidate
+
+Local assets, restrictive content policies, bounded file imports and isolated unpacked Chromium installation tests. No release, public ZIP replacement or store submission. See [security and release gates](docs/security-candidate-1.0.1.md). Branded Chrome/Edge on Windows and updated antivirus validation remain mandatory before release.
