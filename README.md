@@ -158,3 +158,7 @@ Candidate library: 12 synthetic protocols; Studio v2 adds declared source, param
 ### Etapa 04 / Stage 04 — accessible research experience (candidate)
 
 Research navigation grouped by purpose, dark wine surfaces, higher-contrast controls, keyboard skip links, model interpretation guides, chart explanations, bilingual human-readable results and 320px reflow checks. Mini Lab and popup share the same visual treatment. Targeted automated checks are not a full WCAG conformance audit. See [accessibility evidence](docs/accessibility-1.0.1.md). Public release unchanged.
+
+### Etapa 05 / Stage 05 — Integrated Research Studio
+
+Eight research models can explicitly register a chosen numeric metric with its complete input/result snapshot, model version and limitations. R05 remains the separate research protocol notebook. Calculated records restored from files are labelled imported/unverified; no automatic storage or networking. See [integration notes](docs/studio-integration-1.0.1.md). Candidate only.

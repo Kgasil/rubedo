@@ -126,6 +126,26 @@ with sync_playwright() as p:
     def assert_reduced_motion():
         assert page.evaluate("getComputedStyle(document.documentElement).scrollBehavior")=='auto'
     check('reduced motion respected',assert_reduced_motion)
+    page.set_viewport_size({'width':1280,'height':900})
+    # Explicitly register all eight current model calculations.
+    page.locator('#arrival').fill('6');page.locator('#service').fill('10')
+    page.locator('#precision-values').fill('1 2 3')
+    for p,unit in [('sensitivity',None),('queue',None),('simulacao',None),('otimizacao','value points'),('precision','mm'),('mc','kg'),('reg','kg/h'),('rel',None)]:
+        page.locator('#'+p+'-run').click()
+        expect(page.locator('#'+p+'-studio')).to_be_enabled()
+        if unit:page.locator('#'+p+'-unit').fill(unit)
+        page.locator('#'+p+'-scenario').fill('Transfer '+p)
+        page.locator('#'+p+'-studio').click()
+        check('Studio transfer '+p,lambda p=p:expect(page.locator('#'+p+'-transfer-note')).to_contain_text('Registrado'))
+    def transferred(rec):
+        calculated=[r for r in rec['records'] if r['origin']=='local-calculation']
+        assert len(calculated)==8 and len({r['model'] for r in calculated})==8
+        assert all(r['snapshot']['inputs'] and r['snapshot']['limitations'] and r['modelVersion']=='1.0.1' for r in calculated)
+        assert next(r for r in calculated if r['model']=='R03')['snapshot']['inputs']['seed']==42
+    check('Studio full snapshot export',lambda:export_json('#st-json',transferred))
+    page.locator('#arrival').fill('10');check('queue stale transfer blocked',lambda:expect(page.locator('#queue-studio')).to_be_disabled())
+    page.locator('#queue-run').click();check('unstable queue transfer blocked',lambda:expect(page.locator('#queue-studio')).to_be_disabled())
+    page.set_viewport_size({'width':320,'height':800});check('integrated research 320px reflow',no_overflow)
     def mini_accessibility():
         check('Mini tool controls labelled',lambda:expect(page.locator('[data-mode="capacity"]')).to_have_attribute('aria-controls','panel-capacity'))
         check('Mini text contrast',lambda:contrast('#minutes'))
