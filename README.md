@@ -133,3 +133,6 @@ O escudo institucional mantém o topo roxo e rosa, o núcleo branco e a ponta in
 A ordem do ecossistema forma GRAAL. [Arquitetura organizacional](docs/ecossistema.md). Preservar versões, funcionalidades e marcos anteriores. A identidade é conceitual e a disponibilidade comercial do nome não foi verificada.
 
 [![K&G Vision — GRAAL](https://raw.githubusercontent.com/Kgasil/kgasil.github.io/main/assets/kg-symbol.svg?v=20261126-2)](https://kgasil.github.io/) **GRAAL · Marco 01** — identidade integrada / integrated identity.
+
+
+**[Central de distribuição GRAAL / GRAAL distribution center](https://kgasil.github.io/distribuicao.html)** — versões, canais oficiais, limitações e estado de segurança / versions, official channels, limitations and security status.
