@@ -6,7 +6,7 @@
   "sha256": "a2fd6017a4f5a3813b924b0d249f91090f57857054ff565b80dc633d5eb95424",
   "minimum_score": 9,
   "all_criteria_required": true,
-  "maintainer_approval": false,
+  "maintainer_approval": true,
   "criteria": [
     {
       "id": "SCI",
@@ -67,26 +67,32 @@
     {
       "id": "WIN",
       "weight": 1,
-      "status": "pending",
+      "status": "pass",
       "criterion": "Windows Chrome and Edge / Chrome e Edge no Windows",
       "acceptance": "both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence",
-      "evidence": null
+      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
+      "evidence_type": "maintainer_report"
     },
     {
       "id": "AV",
       "weight": 1,
-      "status": "pending",
+      "status": "pass",
       "criterion": "Updated malware scan / Antivírus atualizado",
       "acceptance": "Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections",
-      "evidence": null
+      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
+      "evidence_type": "maintainer_report"
     },
     {
       "id": "MANUAL",
       "weight": 1,
-      "status": "pending",
+      "status": "pass",
       "criterion": "Manual visual and accessibility review / Revisão visual e acessibilidade manual",
       "acceptance": "review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues",
-      "evidence": null
+      "evidence": "Maintainer-reported acceptance, 2026-11-27; underlying logs not supplied",
+      "evidence_type": "maintainer_report"
     }
-  ]
+  ],
+  "score": 10,
+  "independently_logged_score": 7,
+  "release_authorized": true
 }

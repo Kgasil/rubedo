@@ -11,3 +11,6 @@
 ## Candidate 1.0.1 — not released
 
 Public Mini 1.0.0 remains the current download. Candidate 1.0.1 is blocked until [all acceptance gates](homologation-1.0.1.md) pass and the maintainer explicitly approves. Do not update release links or Pages manually before approval.
+
+## Approval update — 2026-11-27
+Em 27/11/2026, o idealizador confirmou aprovação dos três grupos de testes manuais no candidato 1.0.1 (Chrome/Edge no Windows, Microsoft Defender atualizado sem detecções e revisão visual/teclado/acessibilidade) e autorizou a publicação. Resultados relatados, não reexecutados independentemente; logs do Defender, versões de navegador e capturas não fornecidos. / On 27 Nov 2026, the maintainer reported passing all three manual acceptance groups on candidate 1.0.1 and authorized publication. No independent rerun, raw Defender logs, browser versions or screenshots supplied.

@@ -1,0 +1,33 @@
+name: Stage approved Rubedo 1.0.1
+on:
+  push:
+    branches: [scientific-precision-1.0.1]
+    paths: ['.github/workflows/stage-approved-1.0.1.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: scientific-precision-1.0.1
+      - name: Build exact approved ZIP and verify hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          stage="$(mktemp -d)"
+          python3 scripts/package_extension.py --output-dir "$stage"
+          echo "a2fd6017a4f5a3813b924b0d249f91090f57857054ff565b80dc633d5eb95424  $stage/Rubedo-Mini-v1.0.1-install.zip" | sha256sum --check
+          test ! -e downloads/Rubedo-Mini-v1.0.1-install.zip
+          cp "$stage/Rubedo-Mini-v1.0.1-install.zip" downloads/
+          cat "$stage/SHA256SUMS.txt" >> downloads/SHA256SUMS.txt
+          python3 tests/check_package.py
+          python3 tests/verify_mini_package.py
+          (cd downloads && sha256sum --check SHA256SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/Rubedo-Mini-v1.0.1-install.zip downloads/SHA256SUMS.txt
+          git commit -m "release: stage exact maintainer-approved Rubedo 1.0.1 ZIP"
+          git push origin HEAD:scientific-precision-1.0.1

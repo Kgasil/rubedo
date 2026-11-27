@@ -1,5 +1,5 @@
 # Rubedo 1.0.1 — final acceptance / Homologação final
-**BLOCKED / BLOQUEADA — 7.0/10 evidenced; 9.0/10 minimum; all mandatory criteria and explicit approval required.** No release, merge, store submission or public ZIP replacement.
+**APPROVED BY MAINTAINER / APROVADA PELO IDEALIZADOR — 10/10 internal acceptance (7/10 logged/source evidence + 3/10 maintainer report).** Publication authorized; no store submission.
  
 Runtime candidate: `166763ff57b920f18d947fe365311cb01f10d1f4`. Stage 06 [CI 46067486777](https://github.com/Kgasil/rubedo/actions/runs/46067486777) and [46067491501](https://github.com/Kgasil/rubedo/actions/runs/46067491501) both successful. Evidence tied to that runtime commit; this final documentation-only revision must pass its own CI. SHA-256 of reproducible and installed candidate ZIP: `a2fd6017a4f5a3813b924b0d249f91090f57857054ff565b80dc633d5eb95424`.
  
@@ -15,11 +15,11 @@ Weights chosen for this acceptance review; not external certification. Binary po
 | Package integrity / Integridade | 1 | PASS — two reproducible builds, source parity, CRC, fixed historical hashes and same installed ZIP hash |
 | Isolated Chromium install / Instalação Chromium | 0.5 | PASS — actual unpacked extension registered, four tools and JSON export |
 | Identity and free distribution / Identidade e gratuidade | 0.5 | PASS — official symbol and icon assets and historical downloads unchanged in diff; dark wine UI, no payment/account requirement |
-| Windows Chrome and Edge / Chrome e Edge no Windows | 1 | PENDING — both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence |
-| Updated malware scan / Antivírus atualizado | 1 | PENDING — Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections |
-| Manual visual and accessibility review / Revisão visual e acessibilidade manual | 1 | PENDING — review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues |
+| Windows Chrome and Edge / Chrome e Edge no Windows | 1 | PASS (maintainer report) — both clean authorized profiles, four tools, language, clipboard/export, reload and uninstall; exact hash evidence |
+| Updated malware scan / Antivírus atualizado | 1 | PASS (maintainer report) — Defender scan of exact ZIP and extracted files, recorded engine, definitions, time, results and no unresolved detections |
+| Manual visual and accessibility review / Revisão visual e acessibilidade manual | 1 | PASS (maintainer report) — review desktop/mobile and popup, keyboard-only and screen-reader checks; no unresolved critical or high-severity accessibility issues |
  
-Total evidenced: 7.0/10. Unverified: 3.0 points. [Machine-readable matrix](homologation-1.0.1.json). No approval button until all gates pass. Any runtime modification invalidates affected evidence; rebuild, compare hash and repeat required tests. No unresolved critical/high regression permitted.
+Total internal acceptance: 10.0/10; 7.0 points backed by CI/source review, 3.0 points by maintainer report. [Machine-readable matrix](homologation-1.0.1.json). Publication authorized. Any runtime modification invalidates affected evidence; rebuild, compare hash and repeat required tests. No unresolved critical/high regression permitted.
  
 ## Manual evidence checklist / Checklist manual
 Use the exact tested candidate in a clean, authorized environment; never bypass Defender, SmartScreen, Safe Browsing or administrative policies. See [Windows validation instructions](windows-acceptance-1.0.1.md). Record evidence outside the public repository when it contains personal data; sanitize before sharing.
@@ -30,3 +30,6 @@ Use the exact tested candidate in a clean, authorized environment; never bypass 
 - Local asset and blocked-fetch checks on all three pages; imported markup rendered as text; unpacked bundled Chromium install and JSON export, same package hash.
 - Runtime dependency review: no declared extension permissions or external runtime libraries; CI dependencies are not formally supply-chain attested.
 - Logo assets and historical ZIPs unchanged; free experimental lab. No independent WCAG or antivirus certification.
+
+## Maintainer approval / Aprovação do idealizador
+Em 27/11/2026, o idealizador confirmou aprovação dos três grupos de testes manuais no candidato 1.0.1 (Chrome/Edge no Windows, Microsoft Defender atualizado sem detecções e revisão visual/teclado/acessibilidade) e autorizou a publicação. Resultados relatados, não reexecutados independentemente; logs do Defender, versões de navegador e capturas não fornecidos. / On 27 Nov 2026, the maintainer reported passing all three manual acceptance groups on candidate 1.0.1 and authorized publication. No independent rerun, raw Defender logs, browser versions or screenshots supplied.
