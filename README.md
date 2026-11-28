@@ -24,6 +24,14 @@ Lançamento público experimental aprovado pelo idealizador após testes manuais
 
 [Comunicado / Announcement](docs/research-workspace-v1.0.md)
 
+## Edição atual / Current edition — 28/11/2026
+
+**Construir / Build · GRAAL.** Rubedo 1.0.1 é a edição pública experimental atual: oito modelos científicos, caderno R05, 12 protocolos de experimentação, Research Studio e quatro ferramentas em Mini Lab e Mini Extension 1.0.1. CI da Etapa 06 aprovada; testes nativos e aceite de publicação relatados pelo idealizador. Não é certificação científica independente, nota externa de qualidade ou validação industrial. Acesso gratuito; extensão manual, sem lojas oficiais. Estruturação encerrada; manutenção e pesquisa continuam.
+
+Rubedo 1.0.1 is the current experimental public edition: eight scientific models, R05 notebook, 12 experiment protocols, Research Studio, four Mini Lab and Mini Extension tools. Stage 06 first-party CI passed; native tests and publication acceptance reported by the maintainer. Not independent scientific certification, external quality rating or industrial validation. Free access; manual extension, no store publication. Structuring closed; maintenance and research continue.
+
+[Histórico / Changelog](CHANGELOG.md) · [Matriz / Acceptance matrix](docs/homologation-1.0.1.md) · [Central de distribuição / Distribution center](https://kgasil.github.io/distribuicao.html)
+
 ## Português
 
 Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação computacional, pesquisa operacional e engenharia de produção. Sua missão é transformar perguntas em modelos, experimentos reproduzíveis e evidências com hipóteses e limitações explícitas. A iniciativa K&G Vision é individual hoje; no futuro, suas frentes poderão operar com autonomia e coordenação comum. Rubedo não substitui Genesis (estudo), Argus (engenharia e segurança de IA), Aeris (produtividade) ou Lilium (inteligência empresarial).
@@ -32,7 +40,7 @@ Rubedo é uma frente de pesquisa científica aplicada, matemática, simulação 
 
 O simulador da página inicial agora permite continuar o cenário de ciclo e demanda no Mini Lab por um link com valores fictícios no fragmento da URL, sem envio desses valores ao servidor. / The landing demo can transfer a synthetic cycle and demand scenario into the Mini Lab via a URL fragment, without sending the values to the server.
 
-[**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 1.0.0 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
+[**Experimente o simulador na página inicial**](https://kgasil.github.io/rubedo/#experimente) · [**Instalação manual**](https://kgasil.github.io/rubedo/#instalar). O Mini Lab e a extensão 1.0.1 incluem as quatro ferramentas, perdas de disponibilidade e qualidade e cobertura de demanda. Não há publicação nas lojas Chrome/Edge.
 
 | Recurso / Resource | Descrição / Scope |
 | --- | --- |
@@ -43,7 +51,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | [ZIP de instalação / Installation ZIP](https://kgasil.github.io/rubedo/downloads/Rubedo-Mini-v1.0.1-install.zip) | Manifest V3, ícones e tutorial / Manifest V3, icons and tutorial |
 | [Resultados reproduzíveis / Reproducible results](examples/reference-results.json) | Cinco casos de referência sintéticos / Five synthetic reference cases |
 
-## Research Workspace — 1.0 (experimental)
+## Research Workspace — 1.0.1 (experimental)
 
 | ID | Modelo / Model | Entrega / Output |
 | --- | --- | --- |
@@ -56,7 +64,7 @@ O simulador da página inicial agora permite continuar o cenário de ciclo e dem
 | R06 | Precisão de medição / Measurement precision | Média, desvio amostral e erro padrão / Mean, sample deviation and standard error |
 | R07 | Monte Carlo triangular / Triangular Monte Carlo | Semente, percentis e frequência de meta / Seed, quantiles and target frequency |
 
-R06 e R07 são adições experimentais ao Workspace; testes da versão pública de referência aprovados na execução 46007461543. / Experimental additions; new baseline tests passed in run 46007461543; candidate tests pending.
+R06 e R07 são adições experimentais ao Workspace; testes da versão pública de referência aprovados na execução 46007461543. / Experimental additions; historical baseline tests passed in run 46007461543; 1.0.1 first-party CI and reported acceptance are documented above.
 
 | R08 | Regressão linear / Linear regression | Pearson, R², RMSE, resíduos e JSON |
 | R09 | Confiabilidade / Reliability | Série, paralelo, MTTF e JSON |
@@ -64,7 +72,7 @@ R06 e R07 são adições experimentais ao Workspace; testes da versão pública 
 
 ## Experiment Library & Research Studio
 
-[Biblioteca / Library](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; validação pendente / Synthetic data; validation pending.
+[Biblioteca / Library](https://kgasil.github.io/rubedo/research/#biblioteca) · [Central de resultados / Results studio](https://kgasil.github.io/rubedo/research/#studio). Até 100 registros manuais em memória, comparação por modelo, métrica e unidade idênticos, exportação JSON/TXT. / Up to 100 manually entered in-memory records, comparison by matching model, metric and unit, JSON/TXT export. Dados sintéticos; edição 1.0.1 com CI aprovada, aceite relatado; sem validação externa / Synthetic data; 1.0.1 CI passed, maintainer-reported acceptance; no external validation.
 
 ## Mini Edition — 1.0.1
 
